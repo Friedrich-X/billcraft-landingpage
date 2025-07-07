@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useRef, useEffect, useCallback } from "react";
 import gsap from "gsap";
-import { Linkedin, Twitter, Instagram } from "lucide-react";
+import { Linkedin, Twitter, Instagram, CheckCircle, AlertCircle } from "lucide-react";
 
 const PRIMARY_COLOR = "#12E08F";
 
@@ -13,6 +13,9 @@ const ComingSoon: React.FC = () => {
   const sublineRef = useRef<HTMLParagraphElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
   const formRef = useRef<HTMLFormElement>(null);
+  const [success, setSuccess] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [showPopup, setShowPopup] = useState(false);
 
   // Initial Animation for Headline and Subline
   useEffect(() => {
@@ -124,10 +127,41 @@ const ComingSoon: React.FC = () => {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Hier könnte später eine API-Integration erfolgen
+    setError(null);
+    setSuccess(false);
+    const form = e.target as HTMLFormElement;
+    const email = (form.elements[0] as HTMLInputElement).value;
+    try {
+      const res = await fetch("/api/notify", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
+      const data = await res.json();
+      if (res.ok) {
+        setSuccess(true);
+        setShowPopup(true);
+        form.reset();
+      } else {
+        setError(data.error || "Unbekannter Fehler.");
+      }
+    } catch {
+      setError("Serverfehler. Bitte versuche es später erneut.");
+    }
   };
+
+  // Popup schließen (Overlay, Button, Escape)
+  const handleClosePopup = useCallback(() => setShowPopup(false), []);
+  useEffect(() => {
+    if (!showPopup) return;
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setShowPopup(false);
+    };
+    document.addEventListener("keydown", onKeyDown);
+    return () => document.removeEventListener("keydown", onKeyDown);
+  }, [showPopup]);
 
   // Progress Bar Animation
   useEffect(() => {
@@ -187,7 +221,7 @@ const ComingSoon: React.FC = () => {
               />
               <button
                 type="submit"
-                className="px-8 py-3 rounded-full font-semibold text-white shadow-lg focus:outline-none focus:ring-2 focus:ring-[#12E08F]/50 transition-all duration-200 bg-[#12E08F] hover:bg-[#0fcf7e] active:bg-[#0bbf6e] text-base font-sans uppercase tracking-wide transform hover:scale-105 focus:scale-105"
+                className="px-8 py-3 rounded-full font-semibold text-white shadow-lg focus:outline-none focus:ring-2 focus:ring-[#12E08F]/50 transition-all duration-200 bg-[#12E08F] hover:bg-[#0fcf7e] active:bg-[#0bbf6e] text-base font-sans uppercase tracking-wide transform hover:scale-110 focus:scale-110 hover:shadow-2xl"
                 aria-label="Senden"
                 tabIndex={0}
               >
@@ -196,6 +230,38 @@ const ComingSoon: React.FC = () => {
             </>
           )}
         </form>
+      )}
+      {/* Feedback-Meldungen */}
+      {success && error && (
+        <div className="flex items-center gap-2 mt-3 text-red-600 bg-red-50 border border-red-200 rounded-lg px-4 py-2 text-sm font-medium animate-fade-in">
+          <AlertCircle size={20} />
+          {error}
+        </div>
+      )}
+      {/* Fullscreen Erfolgspopup */}
+      {showPopup && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 animate-fade-in"
+          aria-modal="true"
+          tabIndex={-1}
+          onClick={handleClosePopup}
+        >
+          <div
+            className="bg-white rounded-2xl shadow-2xl px-12 py-12 flex flex-col items-center gap-4 max-w-lg w-full relative"
+            onClick={e => e.stopPropagation()}
+          >
+            <CheckCircle size={48} className="text-green-500 mb-2" />
+            <div className="text-xl font-bold text-gray-900 text-center">Danke für deine Anmeldung!</div>
+            <div className="text-gray-600 text-center text-base">Du wirst benachrichtigt, sobald BillCraft startet.</div>
+            <button
+              onClick={handleClosePopup}
+              className="mt-4 px-6 py-2 rounded-full bg-[#12E08F] text-white font-semibold shadow hover:bg-[#0fcf7e] focus:outline-none focus:ring-2 focus:ring-[#12E08F]/50 transition"
+              aria-label="Popup schließen"
+            >
+              Schließen
+            </button>
+          </div>
+        </div>
       )}
       {/* Progress Bar & Socials unten mittig */}
       <div className="fixed bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center z-20 w-full max-w-xs">
