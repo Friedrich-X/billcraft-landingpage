@@ -211,13 +211,10 @@ const ComingSoon: React.FC = () => {
         </div>
         {/* Social Media Icons */}
         <div className="flex gap-4 justify-center mt-1">
-          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-gray-400 hover:text-[#12E08F] transition-colors duration-200">
+          <a href="https://www.linkedin.com/in/eliasratt/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-gray-400 hover:text-[#12E08F] transition-colors duration-200">
             <Linkedin size={24} strokeWidth={2} />
           </a>
-          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="text-gray-400 hover:text-[#12E08F] transition-colors duration-200">
-            <Twitter size={24} strokeWidth={2} />
-          </a>
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-gray-400 hover:text-[#12E08F] transition-colors duration-200">
+          <a href="https://instagram.com/elias.ratt" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-gray-400 hover:text-[#12E08F] transition-colors duration-200">
             <Instagram size={24} strokeWidth={2} />
           </a>
         </div>
