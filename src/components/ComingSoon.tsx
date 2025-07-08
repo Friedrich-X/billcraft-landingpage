@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useRef, useEffect, useCallback } from "react";
 import gsap from "gsap";
-import { Linkedin, Twitter, Instagram, CheckCircle, AlertCircle } from "lucide-react";
+import { Linkedin, Instagram, CheckCircle, AlertCircle } from "lucide-react";
 
 const PRIMARY_COLOR = "#12E08F";
 
