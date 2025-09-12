@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://billcraft.app/sitemap.xml
+Sitemap: https://billcraft.at/sitemap.xml

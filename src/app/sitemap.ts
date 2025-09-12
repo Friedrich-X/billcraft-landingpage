@@ -3,7 +3,7 @@ import { MetadataRoute } from 'next'
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
-      url: 'https://billcraft.app',
+      url: 'https://billcraft.at',
       lastModified: new Date(),
       changeFrequency: 'yearly',
       priority: 1,

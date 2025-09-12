@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://billcraft.app'),
+  metadataBase: new URL('https://billcraft.at'),
   title: "BillCraft – Die smarte Rechnungs-App für Freelancer & Teams",
   description:
     "BillCraft ist die moderne Rechnungs-App für Freelancer, kleine Unternehmen und Teams. Rechnungen, Kunden, Steuern & mehr – alles einfach und digital.",
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     title: "BillCraft – Die smarte Rechnungs-App für Freelancer & Teams",
     description:
       "BillCraft ist die moderne Rechnungs-App für Freelancer, kleine Unternehmen und Teams. Rechnungen, Kunden, Steuern & mehr – alles einfach und digital.",
-    url: "https://billcraft.app/",
+    url: "https://billcraft.at/",
     siteName: "BillCraft",
     images: [
       {
