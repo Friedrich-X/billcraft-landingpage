@@ -18,6 +18,23 @@ export const metadata: Metadata = {
   title: "BillCraft – Die smarte Rechnungs-App für Freelancer & Teams",
   description:
     "BillCraft ist die moderne Rechnungs-App für Freelancer, kleine Unternehmen und Teams. Rechnungen, Kunden, Steuern & mehr – alles einfach und digital.",
+  alternates: {
+    canonical: '/',
+    languages: {
+      'de-DE': '/',
+    },
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
   openGraph: {
     title: "BillCraft – Die smarte Rechnungs-App für Freelancer & Teams",
     description:
