@@ -83,7 +83,7 @@ const ComingSoon: React.FC = () => {
 
   return (
     <>
-      <main className="relative min-h-screen text-white overflow-hidden">
+      <main className="relative h-screen text-white overflow-hidden">
         {/* Background Image */}
         <Image
           src="/background.jpg"
@@ -96,28 +96,28 @@ const ComingSoon: React.FC = () => {
         {/* NO Color Overlay */}
 
         {/* Content */}
-        <div className="relative z-20 min-h-screen flex flex-col p-8 sm:p-12">
+        <div className="relative z-20 h-screen flex flex-col p-4 md:p-12">
           {/* Header */}
           <header className="w-full text-center">
-            <h2 className="text-2xl font-semibold tracking-[0.3em] uppercase" style={textShadowStyle}>
+            <h2 className="text-lg md:text-2xl font-semibold tracking-[0.2em] md:tracking-[0.3em] uppercase" style={textShadowStyle}>
               BILLCRAFT
             </h2>
           </header>
 
           {/* Center Content */}
           <section className="flex-grow flex flex-col items-center justify-center text-center">
-            <h1 ref={headlineRef} className="text-7xl md:text-9xl font-bold tracking-tight" style={textShadowStyle}>
+            <h1 ref={headlineRef} className="text-5xl sm:text-6xl md:text-9xl font-bold tracking-tight" style={textShadowStyle}>
               Coming Soon.
             </h1>
-            <p ref={sublineRef} className="text-2xl md:text-3xl mt-4 font-medium" style={textShadowStyle}>
+            <p ref={sublineRef} className="text-lg sm:text-xl md:text-3xl mt-2 md:mt-4 font-medium" style={textShadowStyle}>
               Stay tuned.
             </p>
-            <div className="mt-8">
+            <div className="mt-6 md:mt-8">
               {!showInput ? (
                 <button
                   ref={buttonRef}
                   onClick={handleNotifyClick}
-                  className="bg-white text-gray-900 rounded-full px-10 py-4 text-xl font-semibold shadow-lg hover:scale-105 transition-transform duration-200"
+                  className="bg-white text-gray-900 rounded-full px-8 py-3 text-base md:px-10 md:py-4 md:text-xl font-semibold shadow-lg hover:scale-105 transition-transform duration-200"
                 >
                   Subscribe
                 </button>
@@ -125,7 +125,7 @@ const ComingSoon: React.FC = () => {
                 <form
                   ref={formRef}
                   onSubmit={handleSubmit}
-                  className="flex flex-col sm:flex-row gap-3 items-center justify-center w-full max-w-md"
+                  className="flex flex-col sm:flex-row gap-2 items-center justify-center w-full max-w-md"
                   style={{ opacity: 0, scale: 0.9 }}
                 >
                   {showForm && (
@@ -135,11 +135,11 @@ const ComingSoon: React.FC = () => {
                         type="email"
                         required
                         placeholder="Your email address"
-                        className="w-full flex-1 px-6 py-4 rounded-full border-2 border-white/50 bg-black/30 backdrop-blur-sm placeholder-white/70 text-white outline-none focus:border-white focus:ring-2 focus:ring-white/50 text-lg"
+                        className="w-full flex-1 px-5 py-3 rounded-full border-2 border-white/50 bg-black/30 backdrop-blur-sm placeholder-white/70 text-white outline-none focus:border-white focus:ring-2 focus:ring-white/50 text-base"
                       />
                       <button
                         type="submit"
-                        className="px-8 py-4 rounded-full font-semibold bg-white text-gray-900 shadow-lg hover:scale-105 transition-transform"
+                        className="px-6 py-3 rounded-full font-semibold bg-white text-gray-900 shadow-lg hover:scale-105 transition-transform"
                       >
                         Send
                       </button>
@@ -148,7 +148,7 @@ const ComingSoon: React.FC = () => {
                 </form>
               )}
               {error && (
-                <div className="flex items-center gap-2 mt-4 text-red-300 bg-red-900/50 backdrop-blur-sm border border-red-400 rounded-lg px-4 py-2 text-sm font-medium">
+                <div className="flex items-center gap-2 mt-3 text-red-300 bg-red-900/50 backdrop-blur-sm border border-red-400 rounded-lg px-4 py-2 text-sm font-medium">
                   <AlertCircle size={20} />
                   {error}
                 </div>
@@ -158,12 +158,12 @@ const ComingSoon: React.FC = () => {
 
           {/* Footer */}
           <footer className="flex justify-center items-center w-full">
-            <div className="flex items-center gap-6">
+            <div className="flex items-center gap-5">
               <a href="https://www.linkedin.com/in/eliasratt/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="transition-transform hover:scale-110">
-                <Linkedin size={48} style={textShadowStyle} />
+                <Linkedin className="h-8 w-8 md:h-10 md:w-10" style={textShadowStyle} />
               </a>
               <a href="https://instagram.com/billcraft.app" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="transition-transform hover:scale-110">
-                <Instagram size={48} style={textShadowStyle} />
+                <Instagram className="h-8 w-8 md:h-10 md:w-10" style={textShadowStyle} />
               </a>
             </div>
           </footer>
