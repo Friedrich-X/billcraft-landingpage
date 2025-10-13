@@ -1,36 +1,52 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&display=swap');
 @import "tailwindcss";
 
-@font-face {
-  font-family: 'Gotham';
-  src: url('/fonts/Gotham.woff2') format('woff2'),
-       url('/fonts/Gotham.woff') format('woff');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
 :root {
+  /* Brand Colors */
+  --pink: #FF50A7;
+  --blue: #5C6CFE;
+  --dark-blue: #374199;
+  --navy-blue: #222647;
+  --graphite-black: #252525;
+  --white: #FFFFFF;
+  --gray: #EFEFF6;
+  
+  /* Semantic Colors */
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #252525;
+  
+  /* Gradient */
+  --gradient-bg: linear-gradient(135deg, var(--pink) 0%, var(--white) 50%, var(--blue) 100%);
 }
 
 @theme inline {
+  --color-pink: var(--pink);
+  --color-blue: var(--blue);
+  --color-dark-blue: var(--dark-blue);
+  --color-navy-blue: var(--navy-blue);
+  --color-graphite-black: var(--graphite-black);
+  --color-white: var(--white);
+  --color-gray: var(--gray);
+  
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-gotham);
-  --font-mono: var(--font-gotham);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  
+  /* Font Sizes - Sora */
+  --font-h1: 128px;
+  --font-h2: 96px;
+  --font-h3: 64px;
+  --font-h4: 48px;
+  --font-h5: 32px;
+  --font-h6: 24px;
+  --font-body: 20px;
+  --font-caption: 16px;
+  --font-caption-small: 14px;
 }
 
 body {
-  background: var(--background);
+  background: var(--gradient-bg);
   color: var(--foreground);
-  font-family: 'Gotham', 'Poppins', Arial, Helvetica, sans-serif;
+  font-family: 'Sora', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: var(--font-body);
+  font-weight: 400;
 }
