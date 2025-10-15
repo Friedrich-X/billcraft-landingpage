@@ -32,10 +32,10 @@ const ComingSoon: React.FC = () => {
           {/* Footer */}
           <footer className="flex justify-center items-center w-full">
             <div className="flex items-center gap-5">
-              <a href="https://www.linkedin.com/in/eliasratt/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="transition-all hover:scale-110 text-graphite-black hover:text-dark-blue">
+              <a href="https://www.linkedin.com/in/eliasratt/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="transition-all hover:scale-110 text-dark-blue hover:text-blue">
                 <Linkedin className="h-8 w-8 md:h-10 md:w-10" />
               </a>
-              <a href="https://instagram.com/billcraft.app" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="transition-all hover:scale-110 text-graphite-black hover:text-dark-blue">
+              <a href="https://instagram.com/billcraft.app" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="transition-all hover:scale-110 text-dark-blue hover:text-blue">
                 <Instagram className="h-8 w-8 md:h-10 md:w-10" />
               </a>
             </div>

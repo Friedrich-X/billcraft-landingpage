@@ -16,7 +16,9 @@
   --foreground: #252525;
   
   /* Gradient */
-  --gradient-bg: linear-gradient(135deg, var(--pink) 0%, var(--white) 50%, var(--blue) 100%);
+  --gradient-bg: radial-gradient(ellipse at top left, rgba(255, 80, 167, 0.15) 0%, transparent 50%),
+                 radial-gradient(ellipse at bottom right, rgba(92, 108, 254, 0.15) 0%, transparent 50%),
+                 linear-gradient(135deg, #1a1a1a 0%, #252525 50%, #1e2139 100%);
 }
 
 @theme inline {
