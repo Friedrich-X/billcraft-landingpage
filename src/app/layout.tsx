@@ -12,9 +12,9 @@ const sora = Sora({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://billcraft.at'),
-  title: "BillCraft – Die smarte Rechnungs-App für Freelancer & Teams",
+  title: "Buchhaltungssoftware: Schön, kostenlos und einfach zu bedienen! | BillCraft",
   description:
-    "BillCraft ist die moderne Rechnungs-App für Freelancer, kleine Unternehmen und Teams. Rechnungen, Kunden, Steuern & mehr – alles einfach und digital.",
+    "BillCraft ist die moderne Buchhaltungssoftware für Freelancer, kleine Unternehmen und Teams. Buchhaltung, Rechnungen, Kunden, Steuern & mehr – alles einfach und digital.",
   icons: {
     icon: [
       { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
@@ -43,14 +43,14 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "BillCraft – Die smarte Rechnungs-App für Freelancer & Teams",
+    title: "Buchhaltungssoftware: Schön, kostenlos und einfach zu bedienen! | BillCraft",
     description:
-      "BillCraft ist die moderne Rechnungs-App für Freelancer, kleine Unternehmen und Teams. Rechnungen, Kunden, Steuern & mehr – alles einfach und digital.",
+      "BillCraft ist die moderne Buchhaltungssoftware für Freelancer, kleine Unternehmen und Teams. Buchhaltung, Rechnungen, Kunden, Steuern & mehr – alles einfach und digital.",
     url: "https://billcraft.at/",
     siteName: "BillCraft",
     images: [
       {
-        url: "/billcraft.svg",
+        url: "/favicon-192x192.png",
         width: 1200,
         height: 630,
         alt: "BillCraft Logo",
@@ -61,10 +61,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "BillCraft – Die smarte Rechnungs-App für Freelancer & Teams",
+    title: "Buchhaltungssoftware: Schön, kostenlos und einfach zu bedienen! | BillCraft",
     description:
-      "BillCraft ist die moderne Rechnungs-App für Freelancer, kleine Unternehmen und Teams. Rechnungen, Kunden, Steuern & mehr – alles einfach und digital.",
-    images: ["/billcraft.svg"],
+      "BillCraft ist die moderne Buchhaltungssoftware für Freelancer, kleine Unternehmen und Teams. Buchhaltung, Rechnungen, Kunden, Steuern & mehr – alles einfach und digital.",
+    images: ["/favicon-192x192.png"],
     creator: "@billcraftapp",
   },
 };
