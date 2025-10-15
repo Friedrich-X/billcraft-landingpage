@@ -1,21 +1,12 @@
 "use client";
-import React, { useState, useRef, useEffect, useCallback } from "react";
+import React, { useRef, useEffect } from "react";
 import Image from "next/image";
 import gsap from "gsap";
-import { Linkedin, Instagram, CheckCircle, AlertCircle } from "lucide-react";
+import { Linkedin, Instagram } from "lucide-react";
 
 const ComingSoon: React.FC = () => {
-  // States and Refs from previous implementation
-  const [showInput, setShowInput] = useState(false);
-  const [showForm, setShowForm] = useState(false);
-  const [error, setError] = useState<string | null>(null);
-  const [showPopup, setShowPopup] = useState(false);
-
-  const inputRef = useRef<HTMLInputElement>(null);
   const headlineRef = useRef<HTMLHeadingElement>(null);
   const sublineRef = useRef<HTMLParagraphElement>(null);
-  const buttonRef = useRef<HTMLButtonElement>(null);
-  const formRef = useRef<HTMLFormElement>(null);
 
   // Initial Animation
   useEffect(() => {
@@ -25,56 +16,6 @@ const ComingSoon: React.FC = () => {
       { y: 0, opacity: 1, duration: 1, ease: "power3.out", stagger: 0.2 }
     );
   }, []);
-
-  // Form logic from previous implementation
-  const handleNotifyClick = () => {
-    if (buttonRef.current) {
-      gsap.to(buttonRef.current, {
-        scale: 0.9,
-        opacity: 0,
-        duration: 0.35,
-        ease: "power2.inOut",
-        onComplete: () => {
-          setShowInput(true);
-          setTimeout(() => {
-            setShowForm(true);
-            if (formRef.current) {
-              gsap.fromTo(
-                formRef.current,
-                { scale: 0.9, opacity: 0 },
-                { scale: 1, opacity: 1, duration: 0.4, ease: "power2.out" }
-              );
-            }
-          }, 50);
-        },
-      });
-    }
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setError(null);
-    const form = e.target as HTMLFormElement;
-    const email = (form.elements[0] as HTMLInputElement).value;
-    try {
-      const res = await fetch("/api/notify", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email }),
-      });
-      const data = await res.json();
-      if (res.ok) {
-        setShowPopup(true);
-        form.reset();
-      } else {
-        setError(data.error || "Unbekannter Fehler.");
-      }
-    } catch {
-      setError("Serverfehler. Bitte versuche es später erneut.");
-    }
-  };
-
-  const handleClosePopup = useCallback(() => setShowPopup(false), []);
 
   return (
     <>

@@ -15,6 +15,16 @@ export const metadata: Metadata = {
   title: "BillCraft – Die smarte Rechnungs-App für Freelancer & Teams",
   description:
     "BillCraft ist die moderne Rechnungs-App für Freelancer, kleine Unternehmen und Teams. Rechnungen, Kunden, Steuern & mehr – alles einfach und digital.",
+  icons: {
+    icon: [
+      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+    ],
+    apple: [
+      { url: '/favicon-192x192.png', sizes: '192x192', type: 'image/png' },
+    ],
+  },
+  manifest: '/manifest.json',
   alternates: {
     canonical: '/',
     languages: {
@@ -40,7 +50,7 @@ export const metadata: Metadata = {
     siteName: "BillCraft",
     images: [
       {
-        url: "/vercel.svg",
+        url: "/billcraft.svg",
         width: 1200,
         height: 630,
         alt: "BillCraft Logo",
@@ -54,7 +64,7 @@ export const metadata: Metadata = {
     title: "BillCraft – Die smarte Rechnungs-App für Freelancer & Teams",
     description:
       "BillCraft ist die moderne Rechnungs-App für Freelancer, kleine Unternehmen und Teams. Rechnungen, Kunden, Steuern & mehr – alles einfach und digital.",
-    images: ["/vercel.svg"],
+    images: ["/billcraft.svg"],
     creator: "@billcraftapp",
   },
 };
@@ -65,7 +75,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="de">
       <body
         className={`${sora.variable} antialiased`}
       >
