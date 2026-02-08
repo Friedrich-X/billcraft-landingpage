@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Sora } from "next/font/google";
 import "./globals.css";
-import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const sora = Sora({
   variable: "--font-sora",
@@ -80,7 +79,6 @@ export default function RootLayout({
         className={`${sora.variable} antialiased`}
       >
         {children}
-        <SpeedInsights />
       </body>
     </html>
   );

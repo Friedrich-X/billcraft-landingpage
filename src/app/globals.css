@@ -5,6 +5,10 @@
   /* Brand Colors */
   --pink: #FF50A7;
   --blue: #5C6CFE;
+  --orange: #FFA85B;
+  --purple: #A55BFF;
+  --green: #00DB37;
+  --red: #FF233D;
   --dark-blue: #374199;
   --navy-blue: #222647;
   --graphite-black: #252525;
@@ -51,4 +55,32 @@ body {
   font-family: 'Sora', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   font-size: var(--font-body);
   font-weight: 400;
+}
+
+/* Animated gradient blobs */
+@keyframes blob {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+
+.animate-blob {
+  animation: blob 7s infinite;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
 }
