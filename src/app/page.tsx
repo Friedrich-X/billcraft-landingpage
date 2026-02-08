@@ -2,6 +2,7 @@ import React from "react";
 import Header from "../components/Header";
 import Button from "../components/Button";
 import Image from "next/image";
+import FeaturesSlider from "../components/FeaturesSlider";
 
 export default function Home() {
   return (
@@ -55,7 +56,7 @@ export default function Home() {
           <div className="mt-20 max-w-7xl mx-auto">
             <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-gray">
               <Image
-                src="/images/dashboardtest.png"
+                src="/dashboardtest.avif"
                 alt="BillCraft Dashboard Preview"
                 width={1920}
                 height={1080}
@@ -66,6 +67,9 @@ export default function Home() {
           </div>
         </div>
       </main>
+
+      {/* Features Slider */}
+      <FeaturesSlider />
     </div>
   );
-} 
+}
