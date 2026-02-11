@@ -84,3 +84,15 @@ body {
 .animation-delay-4000 {
   animation-delay: 4s;
 }
+
+/* Fade-Maske: Icon rechts – weicher Übergang zur Mitte (links ausblenden) */
+.mask-fade-right-edge {
+  -webkit-mask-image: linear-gradient(to left, transparent 0%, var(--foreground) 100%);
+  mask-image: linear-gradient(to left, transparent 0%, var(--foreground) 100%);
+}
+
+/* Fade-Maske: Icon links – weicher Übergang zur Mitte (rechts ausblenden) */
+.mask-fade-left-edge {
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, var(--foreground) 100%);
+  mask-image: linear-gradient(to right, transparent 0%, var(--foreground) 100%);
+}

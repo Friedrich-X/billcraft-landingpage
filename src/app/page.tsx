@@ -2,11 +2,14 @@ import React from "react";
 import Header from "../components/Header";
 import Button from "../components/Button";
 import Image from "next/image";
+import Link from "next/link";
 import FeaturesSlider from "../components/FeaturesSlider";
+import AISection from "../components/AISection";
+import Footer from "../components/Footer";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-background">
       <Header />
       
       {/* Hero Section */}
@@ -20,13 +23,19 @@ export default function Home() {
             <p className="text-xl md:text-2xl text-foreground/60 mb-12 max-w-3xl mx-auto leading-relaxed">
               Die intuitive Buchhaltungssoftware, die dir Zeit spart und dein Business wachsen lässt. Einfach, schnell und intelligent.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <div className="flex flex-col items-center gap-6">
               <Button href="#signup" variant="primary" size="lg">
-                Kostenlos starten
+                BillCraft kostenlos testen
               </Button>
-              <Button href="#demo" variant="outline" size="lg">
-                Live Demo ansehen
-              </Button>
+              <p className="text-base text-foreground/60">
+                Haben Sie bereits ein Konto?{" "}
+                <Link
+                  href="#login"
+                  className="text-base text-foreground underline underline-offset-2 hover:text-blue hover:no-underline transition-all"
+                >
+                  <strong>Jetzt einloggen</strong>
+                </Link>
+              </p>
             </div>
             
             {/* Trust Indicators */}
@@ -56,7 +65,7 @@ export default function Home() {
           <div className="mt-20 max-w-7xl mx-auto">
             <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-gray">
               <Image
-                src="/dashboardtest.avif"
+                src="/images/dashboardtest.png"
                 alt="BillCraft Dashboard Preview"
                 width={1920}
                 height={1080}
@@ -70,6 +79,11 @@ export default function Home() {
 
       {/* Features Slider */}
       <FeaturesSlider />
+
+      {/* AI Section */}
+      <AISection />
+
+      <Footer />
     </div>
   );
 }

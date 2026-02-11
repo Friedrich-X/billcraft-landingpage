@@ -22,17 +22,17 @@ const Button: React.FC<ButtonProps> = ({
   disabled = false,
   type = "button",
 }) => {
-  const baseStyles = "group rounded-md text-center transition-all font-medium inline-block";
+  const baseStyles = "group rounded-md text-center transition-all font-semibold inline-block md:w-auto";
   
   const sizeStyles = {
     sm: "px-4 py-2 text-sm",
-    md: "px-7 py-2.5 text-base",
-    lg: "px-8 py-3 text-lg",
+    md: "px-6 py-2.5 text-base",
+    lg: "px-10 py-3 text-xl",
   };
 
   const variantStyles = {
     primary: "bg-foreground hover:bg-blue text-background",
-    secondary: "bg-foreground hover:bg-foreground/90 text-white hover:shadow-lg",
+    secondary: "bg-blue/80 hover:bg-blue text-white hover:shadow-lg",
     outline: "bg-white hover:bg-gray text-foreground border-2 border-gray hover:border-blue",
   };
 

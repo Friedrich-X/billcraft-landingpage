@@ -243,14 +243,14 @@ const FeaturesSlider: React.FC = () => {
         <div className="flex justify-center items-center gap-4">
           <button
             onClick={() => scroll("left")}
-            className="hover:bg-blue border border-foreground/20 hover:border-blue shadow-lg rounded-full p-3 transition-all hover:scale-105 cursor-pointer group"
+            className="hover:bg-blue border border-foreground/20 hover:border-blue rounded-full p-3 transition-all hover:scale-110 cursor-pointer group"
             aria-label="Scroll Left"
           >
             <ArrowLeft className="w-6 h-6 text-foreground group-hover:text-white transition-colors" />
           </button>
           <button
             onClick={() => scroll("right")}
-            className="hover:bg-blue border border-foreground/20 hover:border-blue shadow-lg rounded-full p-3 transition-all hover:scale-105 cursor-pointer group"
+            className="hover:bg-blue border border-foreground/20 hover:border-blue rounded-full p-3 transition-all hover:scale-110 cursor-pointer group"
             aria-label="Scroll Right"
           >
             <ArrowRight className="w-6 h-6 text-foreground group-hover:text-white transition-colors" />
