@@ -21,7 +21,6 @@ import {
   ArrowLeft,
   ArrowRight
 } from "lucide-react";
-import BillCraftSymbol from "./BillCraftSymbol";
 
 const FeaturesSlider: React.FC = () => {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
@@ -196,11 +195,13 @@ const FeaturesSlider: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3, delay: index * 0.05 }}
               viewport={{ once: true }}
-              className="relative flex-shrink-0 w-80 min-h-[280px] bg-white rounded-2xl p-8 border border-gray hover:border-blue transition-all duration-300 group cursor-pointer hover:shadow-xl hover:-translate-y-3 overflow-hidden"
+              className="relative shrink-0 w-80 min-h-[280px] bg-white rounded-2xl p-8 border border-gray hover:border-foreground/5 transition-all duration-300 group cursor-pointer hover:shadow-xl hover:-translate-y-3 overflow-hidden"
             >
-              {/* BillCraft Symbol - Animated on Hover */}
-              <div className="absolute pointer-events-none select-none opacity-0 group-hover:opacity-20 transition-all duration-300 z-0 w-[140px] h-[80px] -top-5 -right-10 rotate-45 scale-75 group-hover:translate-x-[-15px] group-hover:translate-y-[15px] group-hover:rotate-0 group-hover:scale-100 text-gray-400">
-                <BillCraftSymbol width={140} height={80} />
+              {/* Feature-Icon – wie BillCraft: erst unsichtbar, beim Hover reinrutschen, Farbe der Karte, ~5 % Opacity */}
+              <div
+                className={`absolute pointer-events-none select-none z-0 w-[140px] h-[80px] top-0 -right-14 flex items-center justify-center ${feature.color} opacity-0 transition-all duration-300 rotate-45 scale-75 group-hover:opacity-[0.05] group-hover:translate-x-[-28px] group-hover:translate-y-[12px] group-hover:rotate-0 group-hover:scale-100`}
+              >
+                <Icon className="w-26 h-26 shrink-0" />
               </div>
 
               {/* Icon */}
@@ -219,7 +220,7 @@ const FeaturesSlider: React.FC = () => {
               </div>
 
               {/* Arrow Bottom Right on Hover */}
-              <div className="absolute bottom-6 right-6 w-10 h-10 flex items-center justify-center opacity-0 group-hover:opacity-100 group-hover:translate-x-2 transition-all duration-300 z-10">
+              <div className="absolute bottom-6 right-6 w-12 h-12 flex items-center justify-center opacity-0 group-hover:opacity-100 group-hover:translate-x-2 transition-all duration-300 z-10">
                 <motion.div
                   className="group-hover:animate-arrow-slide"
                   animate={{
@@ -230,7 +231,7 @@ const FeaturesSlider: React.FC = () => {
                     ease: "easeInOut",
                   }}
                 >
-                  <ArrowRight className="w-5 h-5 text-foreground" />
+                  <ArrowRight className="w-8 h-8 text-foreground" />
                 </motion.div>
               </div>
             </motion.div>

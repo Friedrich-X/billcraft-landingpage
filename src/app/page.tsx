@@ -1,8 +1,7 @@
-import React from "react";
 import Header from "../components/Header";
 import Button from "../components/Button";
-import Image from "next/image";
 import Link from "next/link";
+import AnimatedDashboardPreview from "../components/AnimatedDashboardPreview";
 import FeaturesSlider from "../components/FeaturesSlider";
 import AISection from "../components/AISection";
 import Footer from "../components/Footer";
@@ -61,19 +60,8 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Dashboard Preview */}
-          <div className="mt-20 max-w-7xl mx-auto">
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-gray">
-              <Image
-                src="/images/dashboardtest.png"
-                alt="BillCraft Dashboard Preview"
-                width={1920}
-                height={1080}
-                className="w-full h-auto"
-                priority
-              />
-            </div>
-          </div>
+          {/* Dashboard Preview – animiert von unten */}
+          <AnimatedDashboardPreview />
         </div>
       </main>
 

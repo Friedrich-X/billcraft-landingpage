@@ -33,7 +33,7 @@ const Button: React.FC<ButtonProps> = ({
   const variantStyles = {
     primary: "bg-foreground hover:bg-blue text-background",
     secondary: "bg-blue/80 hover:bg-blue text-white hover:shadow-lg",
-    outline: "bg-white hover:bg-gray text-foreground border-2 border-gray hover:border-blue",
+    outline: "bg-background text-foreground border border-foreground hover:bg-foreground hover:text-background",
   };
 
   const disabledStyles = disabled ? "opacity-50 cursor-not-allowed hover:translate-y-0 hover:shadow-none" : "";
