@@ -143,6 +143,7 @@ const Footer: React.FC = () => {
           <p className="text-xs text-background/50 order-2 sm:order-1">
             © {new Date().getFullYear()} BillCraft. Alle Rechte vorbehalten.
           </p>
+          <p className="text-xs text-background/50 order-2 sm:order-1">Made with ❤️ in Austria</p>
           <div className="flex flex-wrap justify-center sm:justify-end gap-6 text-xs order-1 sm:order-2">
             <Link
               href="#cookies"

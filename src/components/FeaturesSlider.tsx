@@ -167,7 +167,7 @@ const FeaturesSlider: React.FC = () => {
   ];
 
   return (
-    <section className="w-full py-20 bg-gradient-to-b from-white to-gray/30 overflow-hidden">
+    <section className="w-full py-20 bg-linear-to-b from-white to-gray/30 overflow-hidden">
       {/* Header */}
       <div className="container mx-auto px-4 md:px-6 lg:px-8 mb-12">
         <div className="text-center">
