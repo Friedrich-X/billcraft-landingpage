@@ -100,7 +100,7 @@ const Header: React.FC = () => {
       icon: FileText,
       label: "Rechnungen",
       description: "Erstelle und versende professionelle Rechnungen",
-      href: "#rechnungen",
+      href: "/rechnungen",
     },
     {
       icon: Users,
@@ -222,7 +222,7 @@ const Header: React.FC = () => {
   };
 
   const navItems = [
-    { label: "Preise", href: "#preise" },
+    { label: "Preise", href: "/preise" },
   ];
 
   return (
@@ -234,7 +234,7 @@ const Header: React.FC = () => {
           : "bg-transparent py-6"
       }`}
     >
-      <nav className="container mx-auto px-4 md:px-6 lg:px-8 relative">
+      <nav className="container mx-auto max-w-7xl px-4 md:px-6 lg:px-8 relative">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link
@@ -353,7 +353,7 @@ const Header: React.FC = () => {
             onMouseEnter={handleMouseEnterMegaMenu}
             onMouseLeave={handleMouseLeaveMegaMenu}
           >
-            <div className="container mx-auto px-4 md:px-6 lg:px-8">
+            <div className="container mx-auto max-w-7xl px-4 md:px-6 lg:px-8">
               <div className="mb-8">
                 <h3 className="text-xs font-semibold text-blue uppercase tracking-wider mb-1">
                   Produkt Features
@@ -416,7 +416,7 @@ const Header: React.FC = () => {
             onMouseEnter={handleMouseEnterSolutionsMenu}
             onMouseLeave={handleMouseLeaveSolutionsMenu}
           >
-            <div className="container mx-auto px-4 md:px-6 lg:px-8">
+            <div className="container mx-auto max-w-7xl px-4 md:px-6 lg:px-8">
               <div className="mb-8">
                 <h3 className="text-xs font-semibold text-blue uppercase tracking-wider mb-1">
                   Lösungen für jedes Business
@@ -495,7 +495,7 @@ const Header: React.FC = () => {
             onMouseEnter={handleMouseEnterExploreMenu}
             onMouseLeave={handleMouseLeaveExploreMenu}
           >
-            <div className="container mx-auto px-4 md:px-6 lg:px-8">
+            <div className="container mx-auto max-w-7xl px-4 md:px-6 lg:px-8">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-x-12 gap-y-10">
                 {exploreItems.map((category, categoryIndex) => (
                   <motion.div
@@ -559,7 +559,7 @@ const Header: React.FC = () => {
               style={{ top: headerHeight }}
             >
               {/* Gleicher Container wie Nav (Zeile 562): Listen + Buttons, Buttons unten sticky */}
-              <div className="container mx-auto w-full px-4 md:px-6 lg:px-8 flex-1 flex flex-col min-h-0">
+              <div className="container mx-auto max-w-7xl w-full px-4 md:px-6 lg:px-8 flex-1 flex flex-col min-h-0">
                 {/* Mitte: nur hier scrollbar */}
                 <div className="flex-1 min-h-0 overflow-y-auto overflow-x-hidden py-6">
                 {/* Einheitliche Zeilenhöhe für alle Hauptpunkte (Produkt, Lösungen, Preise, Erkunden) */}

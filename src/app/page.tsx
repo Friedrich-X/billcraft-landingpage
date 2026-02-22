@@ -21,11 +21,11 @@ export default function Home() {
         <div className="container mx-auto">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-semibold text-foreground mb-6 leading-tight">
-              Buchhaltung neu erfunden für{" "}
-              <span className="text-blue">moderne Unternehmer</span>
+              Buchhaltung sollte{" "}
+              <span className="text-blue">nicht kompliziert</span> sein.
             </h1>
             <p className="text-xl md:text-2xl text-foreground/80 mb-12 max-w-3xl mx-auto leading-relaxed">
-              Die intuitive Buchhaltungssoftware, die dir Zeit spart und dein Business wachsen lässt. Einfach, schnell und intelligent.
+              Ihr zweites Gehirn für Rechnungen, Belege und Zahlen – einfach organisiert, immer griffbereit. So behalten Sie den Überblick, ohne sich zu verzetteln.
             </p>
             <div className="flex flex-col items-center gap-6">
               <Button href="#signup" variant="primary" size="lg">
@@ -101,12 +101,13 @@ export default function Home() {
         <InvoiceCreationVisual />
       </FeatureShowcaseSection>
 
-      {/* Zweite Zwischen-Section */}
+      {/* Zweite Zwischen-Section – Gradient wie AISection, anderer Inhalt */}
       <IntermediateSection
         headline="Reporting & Auswertung auf einen Blick."
         description="Überblick über Umsätze, offene Posten und Steuern – klar aufbereitet für Sie und Ihren Steuerberater. Sparen Sie Zeit bei der Auswertung und behalten Sie Ihre Zahlen im Griff."
         ctaText="Mehr erfahren"
         ctaHref="#signup"
+        variant="gradient"
       />
 
       {/* Weitere Feature Showcases */}

@@ -21,7 +21,7 @@ const AnimatedDashboardPreview: React.FC = () => {
           height={1285}
           className="w-full h-auto max-h-[75vh] object-contain object-top"
           priority
-          quality={95}
+          loading="eager"
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 2304px"
         />
       </div>

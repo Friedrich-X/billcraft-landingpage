@@ -17,11 +17,6 @@
   /* Semantic Colors */
   --background: #ffffff;
   --foreground: #252525;
-  
-  /* Gradient */
-  --gradient-bg: radial-gradient(ellipse at top left, rgba(255, 80, 167, 0.15) 0%, transparent 50%),
-                 radial-gradient(ellipse at bottom right, rgba(92, 108, 254, 0.15) 0%, transparent 50%),
-                 linear-gradient(135deg, #1a1a1a 0%, #252525 50%, #1e2139 100%);
 }
 
 @theme inline {
@@ -94,4 +89,16 @@ body {
 .mask-fade-left-edge {
   -webkit-mask-image: linear-gradient(to right, transparent 0%, var(--foreground) 100%);
   mask-image: linear-gradient(to right, transparent 0%, var(--foreground) 100%);
+}
+
+/* Plan-Vergleich: Trennlinie unter Header per ::after (Evernote-Lösung) */
+.plan-comparison-header-cell::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 300%;
+  background: rgba(37, 37, 37, 0.25);
+  pointer-events: none;
 }

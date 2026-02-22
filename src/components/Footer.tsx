@@ -17,7 +17,7 @@ const footerColumns = [
       { label: "Zeiterfassung", href: "#zeiterfassung" },
       { label: "Mahnwesen", href: "#mahnwesen" },
       { label: "E-Mail-Versand", href: "#e-mail-versand" },
-      { label: "Mobile App", href: "#mobile-app" },
+      { label: "Tarife vergleichen", href: "/preise" },
     ],
   },
   {
