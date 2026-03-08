@@ -43,6 +43,21 @@ const faqItems = [
     answer:
       "Du kannst Rechnungen direkt per E-Mail versenden (inkl. PDF-Anhang), als PDF herunterladen oder den Link zur Online-Rechnung teilen. Der Versandstatus wird automatisch nachverfolgt.",
   },
+  {
+    question: "Wie funktioniert das Mahnwesen?",
+    answer:
+      "BillCraft erkennt überfällige Rechnungen automatisch und erstellt Zahlungserinnerungen sowie Mahnstufen (1. und 2. Mahnung). Du kannst Fristen und Texte individuell anpassen und Mahnungen per E-Mail versenden.",
+  },
+  {
+    question: "Kann ich Gutschriften und Stornos erstellen?",
+    answer:
+      "Ja. Über die Rechnungsdetails kannst du eine Stornorechnung oder Gutschrift mit einem Klick erstellen. BillCraft verknüpft diese automatisch mit der Originalrechnung und passt alle Salden an.",
+  },
+  {
+    question: "Gibt es wiederkehrende Rechnungen?",
+    answer:
+      "Ja. Lege ein Intervall fest (monatlich, quartalsweise, jährlich) und BillCraft erstellt und versendet die Rechnung automatisch zum gewünschten Zeitpunkt – ideal für Abos und Wartungsverträge.",
+  },
 ];
 
 export default function RechnungenPage() {
