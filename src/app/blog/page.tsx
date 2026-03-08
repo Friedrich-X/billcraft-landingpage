@@ -141,7 +141,7 @@ export default function BlogPage() {
                 </p>
                 <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-foreground mt-2.5 group-hover:text-blue transition-colors">
                   Mehr erfahren
-                  <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                  <ArrowUpRight className="w-4 h-4 group-hover:rotate-45 transition-transform duration-200" />
                 </span>
               </Link>
             ))}
