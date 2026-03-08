@@ -2,19 +2,19 @@
 
 :root {
   /* Brand Colors */
-  --pink: #FF50A7;
-  --blue: #5C6CFE;
-  --orange: #FFA85B;
-  --purple: #A55BFF;
-  --green: #00DB37;
-  --red: #FF233D;
+  --pink: #ff50a7;
+  --blue: #5c6cfe;
+  --orange: #ffa85b;
+  --purple: #a55bff;
+  --green: #00db37;
+  --red: #ff233d;
   --dark-blue: #374199;
   --navy-blue: #222647;
   --graphite-black: #252525;
-  --white: #FFFFFF;
-  --gray: #EFEFF6;
+  --white: #ffffff;
+  --gray: #efeff6;
   --border-color: #252525;
-  
+
   /* Semantic Colors */
   --background: #ffffff;
   --foreground: #252525;
@@ -31,7 +31,7 @@
   --color-border-color: var(--border-color);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  
+
   /* Font Sizes - Sora */
   --font-h1: 128px;
   --font-h2: 96px;
@@ -47,9 +47,60 @@
 body {
   background: var(--gradient-bg);
   color: var(--foreground);
-  font-family: var(--font-sora), -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  font-size: var(--font-body);
+  font-family:
+    var(--font-sora),
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+  font-size: 1rem;
   font-weight: 400;
+  line-height: 1.6;
+}
+
+/* Typography Scale — scoped to main content only (not header/footer) */
+main h1,
+main h2,
+main h3,
+main h4,
+main h5,
+main h6 {
+  font-weight: 600;
+  line-height: 1.15;
+  color: var(--foreground);
+}
+
+main h1 {
+  font-size: clamp(2.5rem, 5vw, 4.5rem); /* 40px → 72px */
+  letter-spacing: -0.02em;
+  margin-bottom: 1.5rem;
+}
+
+main h2 {
+  font-size: clamp(2rem, 4vw, 3.5rem); /* 32px → 56px */
+  letter-spacing: -0.015em;
+  margin-bottom: 1.25rem;
+}
+
+main h3 {
+  font-size: clamp(1.5rem, 2.5vw, 2rem); /* 24px → 32px */
+  letter-spacing: -0.01em;
+  margin-bottom: 1rem;
+}
+
+main h4 {
+  font-size: clamp(1.25rem, 2vw, 1.5rem); /* 20px → 24px */
+  margin-bottom: 0.75rem;
+}
+
+main h5 {
+  font-size: 1.125rem; /* 18px */
+  margin-bottom: 0.5rem;
+}
+
+main h6 {
+  font-size: 1rem; /* 16px */
+  margin-bottom: 0.5rem;
 }
 
 /* Animated gradient blobs */
@@ -82,13 +133,21 @@ body {
 
 /* Fade-Maske: Icon rechts – weicher Übergang zur Mitte (links ausblenden) */
 .mask-fade-right-edge {
-  -webkit-mask-image: linear-gradient(to left, transparent 0%, var(--foreground) 100%);
+  -webkit-mask-image: linear-gradient(
+    to left,
+    transparent 0%,
+    var(--foreground) 100%
+  );
   mask-image: linear-gradient(to left, transparent 0%, var(--foreground) 100%);
 }
 
 /* Fade-Maske: Icon links – weicher Übergang zur Mitte (rechts ausblenden) */
 .mask-fade-left-edge {
-  -webkit-mask-image: linear-gradient(to right, transparent 0%, var(--foreground) 100%);
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    var(--foreground) 100%
+  );
   mask-image: linear-gradient(to right, transparent 0%, var(--foreground) 100%);
 }
 
