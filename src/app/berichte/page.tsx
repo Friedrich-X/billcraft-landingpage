@@ -4,13 +4,39 @@ import Footer from "@/components/Footer";
 import { ProductHero } from "@/components/product-hero";
 import FeatureShowcaseSection from "@/components/FeatureShowcaseSection";
 import IntermediateSection from "@/components/IntermediateSection";
-import PlaceholderVisual from "@/components/PlaceholderVisual";
+import FAQ from "@/components/FAQ";
+import DashboardWidgetsVisual from "@/components/animations/DashboardWidgetsVisual";
+import ChartAnimationVisual from "@/components/animations/ChartAnimationVisual";
+import SteuerExportVisual from "@/components/animations/SteuerExportVisual";
 
 export const metadata: Metadata = {
   title: "Berichte & Auswertungen | BillCraft – Finanzberichte auf einen Blick",
   description:
     "Analysieren Sie Umsätze, Ausgaben und offene Posten mit übersichtlichen Berichten. Export für Steuerberater inklusive.",
 };
+
+const faqItems = [
+  {
+    question: "Welche Berichte kann ich erstellen?",
+    answer:
+      "Umsatzberichte, Ausgabenübersichten, Gewinn-und-Verlust-Rechnung, offene Posten und kundenspezifische Auswertungen – monatlich oder jährlich.",
+  },
+  {
+    question: "In welchen Formaten kann ich Berichte exportieren?",
+    answer:
+      "PDF für visuelle Berichte und CSV für die Weiterverarbeitung in Excel oder durch deinen Steuerberater.",
+  },
+  {
+    question: "Werden die Daten in Echtzeit aktualisiert?",
+    answer:
+      "Ja, alle Kennzahlen im Dashboard werden bei jeder neuen Rechnung oder Zahlung sofort aktualisiert.",
+  },
+  {
+    question: "Kann mein Steuerberater direkt auf die Berichte zugreifen?",
+    answer:
+      "Du kannst Berichte per E-Mail teilen oder als PDF/CSV exportieren. Ein direkter Steuerberater-Zugang ist in Planung.",
+  },
+];
 
 export default function BerichtePage() {
   return (
@@ -25,7 +51,7 @@ export default function BerichtePage() {
           ctaHref="#signup"
           headingId="berichte-hero-heading"
         >
-          <PlaceholderVisual label="Finanzberichte" />
+          <DashboardWidgetsVisual />
         </ProductHero>
 
         <FeatureShowcaseSection
@@ -37,7 +63,7 @@ export default function BerichtePage() {
           imagePosition="left"
           tagClassName="bg-purple-500/10 text-purple-700"
         >
-          <PlaceholderVisual label="Dashboard & Kennzahlen" />
+          <ChartAnimationVisual />
         </FeatureShowcaseSection>
 
         <FeatureShowcaseSection
@@ -49,7 +75,7 @@ export default function BerichtePage() {
           imagePosition="right"
           tagClassName="bg-purple-500/10 text-purple-700"
         >
-          <PlaceholderVisual label="Export für Steuerberater" />
+          <SteuerExportVisual />
         </FeatureShowcaseSection>
 
         <IntermediateSection
@@ -60,6 +86,10 @@ export default function BerichtePage() {
           variant="gradient"
           headlineHighlight="sprechen"
         />
+
+        <div className="container mx-auto max-w-7xl px-4 md:px-6 lg:px-8 py-16 md:py-24">
+          <FAQ title="Häufige Fragen zu Berichten" items={faqItems} />
+        </div>
       </main>
 
       <Footer />

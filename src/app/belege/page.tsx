@@ -4,13 +4,39 @@ import Footer from "@/components/Footer";
 import { ProductHero } from "@/components/product-hero";
 import FeatureShowcaseSection from "@/components/FeatureShowcaseSection";
 import IntermediateSection from "@/components/IntermediateSection";
-import PlaceholderVisual from "@/components/PlaceholderVisual";
+import BelegScannerVisual from "@/components/animations/BelegScannerVisual";
+import BelegKategorisierungVisual from "@/components/animations/BelegKategorisierungVisual";
+import BelegArchivVisual from "@/components/animations/BelegArchivVisual";
+import FAQ from "@/components/FAQ";
 
 export const metadata: Metadata = {
   title: "Belege erfassen | BillCraft – Digitale Belegverwaltung",
   description:
     "Erfassen, kategorisieren und archivieren Sie Belege digital mit BillCraft. Automatische Erkennung, übersichtliche Ablage und GoBD-konform.",
 };
+
+const faqItems = [
+  {
+    question: "Welche Belegtypen werden unterstützt?",
+    answer:
+      "BillCraft unterstützt alle gängigen Belegtypen: Quittungen, Rechnungen, Kassenzettel sowie digitale Belege wie PDFs und E-Mail-Anhänge. Einfach fotografieren oder hochladen – den Rest erledigt die automatische Erkennung.",
+  },
+  {
+    question: "Wie funktioniert die automatische Erkennung?",
+    answer:
+      "Unsere KI erkennt automatisch die wichtigsten Daten aus Ihren Belegen: Datum, Betrag, Händler und Kategorie. Egal ob Foto oder PDF – die Erkennung funktioniert zuverlässig und spart Ihnen das manuelle Eintippen.",
+  },
+  {
+    question: "Sind meine Belege GoBD-konform archiviert?",
+    answer:
+      "Ja. Alle Belege werden revisionssicher archiviert: unveränderbar, vollständig und jederzeit abrufbar. Die Aufbewahrungsfrist von 10 Jahren wird automatisch eingehalten – so sind Sie immer auf der sicheren Seite.",
+  },
+  {
+    question: "Kann ich Belege exportieren?",
+    answer:
+      "Ja, Sie können Belege jederzeit als PDF oder CSV exportieren – einzeln oder gesammelt. Die Exporte sind Steuerberater-ready und lassen sich direkt in gängige Buchhaltungssysteme importieren.",
+  },
+];
 
 export default function BelegePage() {
   return (
@@ -25,7 +51,7 @@ export default function BelegePage() {
           ctaHref="#signup"
           headingId="belege-hero-heading"
         >
-          <PlaceholderVisual label="Belegerfassung" />
+          <BelegScannerVisual />
         </ProductHero>
 
         <FeatureShowcaseSection
@@ -35,9 +61,9 @@ export default function BelegePage() {
           ctaText="Kostenlos ausprobieren"
           ctaHref="#signup"
           imagePosition="left"
-          tagClassName="bg-purple-500/10 text-purple-700"
+          tagClassName="bg-orange-500/10 text-orange-700"
         >
-          <PlaceholderVisual label="Automatische Kategorisierung" />
+          <BelegKategorisierungVisual />
         </FeatureShowcaseSection>
 
         <FeatureShowcaseSection
@@ -47,9 +73,9 @@ export default function BelegePage() {
           ctaText="Mehr erfahren"
           ctaHref="#signup"
           imagePosition="right"
-          tagClassName="bg-purple-500/10 text-purple-700"
+          tagClassName="bg-orange-500/10 text-orange-700"
         >
-          <PlaceholderVisual label="Belegarchiv" />
+          <BelegArchivVisual />
         </FeatureShowcaseSection>
 
         <IntermediateSection
@@ -60,6 +86,10 @@ export default function BelegePage() {
           variant="gradient"
           headlineHighlight="leicht gemacht"
         />
+
+        <div className="container mx-auto max-w-7xl px-4 md:px-6 lg:px-8 py-16 md:py-24">
+          <FAQ title="Häufige Fragen zu Belegen" items={faqItems} />
+        </div>
       </main>
 
       <Footer />

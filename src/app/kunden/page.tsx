@@ -4,13 +4,38 @@ import Footer from "@/components/Footer";
 import { ProductHero } from "@/components/product-hero";
 import FeatureShowcaseSection from "@/components/FeatureShowcaseSection";
 import IntermediateSection from "@/components/IntermediateSection";
-import PlaceholderVisual from "@/components/PlaceholderVisual";
+import KundenProfilVisual from "@/components/animations/KundenProfilVisual";
+import KundenListeVisual from "@/components/animations/KundenListeVisual";
+import KundenUmsatzVisual from "@/components/animations/KundenUmsatzVisual";
+import FAQ from "@/components/FAQ";
 
 export const metadata: Metadata = {
   title: "Kundenverwaltung | BillCraft – Alle Kunden an einem Ort",
   description:
     "Verwalten Sie Kunden, Kontakte und Projekte zentral in BillCraft. Rechnungen und Belege direkt zuordnen – übersichtlich und effizient.",
 };
+
+const faqItems = [
+  {
+    question: "Wie importiere ich bestehende Kunden?",
+    answer: "CSV-Import oder manuell. BillCraft erkennt Duplikate automatisch.",
+  },
+  {
+    question: "Kann ich mehrere Ansprechpartner pro Kunde anlegen?",
+    answer:
+      "Ja, beliebig viele Kontakte pro Unternehmen mit Rolle und Kontaktdaten.",
+  },
+  {
+    question: "Werden Rechnungen automatisch dem Kunden zugeordnet?",
+    answer:
+      "Ja, beim Erstellen einer Rechnung wählst du den Kunden aus. Alle Dokumente werden automatisch verknüpft.",
+  },
+  {
+    question: "Kann ich kundenbezogene Auswertungen sehen?",
+    answer:
+      "Ja, pro Kunde siehst du Umsatz, offene Posten und Rechnungshistorie auf einen Blick.",
+  },
+];
 
 export default function KundenPage() {
   return (
@@ -25,7 +50,7 @@ export default function KundenPage() {
           ctaHref="#signup"
           headingId="kunden-hero-heading"
         >
-          <PlaceholderVisual label="Kundenverwaltung" />
+          <KundenProfilVisual />
         </ProductHero>
 
         <FeatureShowcaseSection
@@ -35,9 +60,9 @@ export default function KundenPage() {
           ctaText="Kostenlos ausprobieren"
           ctaHref="#signup"
           imagePosition="left"
-          tagClassName="bg-amber-500/10 text-amber-700"
+          tagClassName="bg-pink/10 text-pink"
         >
-          <PlaceholderVisual label="Kontakte & Stammdaten" />
+          <KundenListeVisual />
         </FeatureShowcaseSection>
 
         <FeatureShowcaseSection
@@ -47,9 +72,9 @@ export default function KundenPage() {
           ctaText="Mehr erfahren"
           ctaHref="#signup"
           imagePosition="right"
-          tagClassName="bg-amber-500/10 text-amber-700"
+          tagClassName="bg-pink/10 text-pink"
         >
-          <PlaceholderVisual label="Projekte zuordnen" />
+          <KundenUmsatzVisual />
         </FeatureShowcaseSection>
 
         <IntermediateSection
@@ -60,6 +85,10 @@ export default function KundenPage() {
           variant="dark"
           headlineHighlight="Aufwand"
         />
+
+        <div className="container mx-auto max-w-7xl px-4 md:px-6 lg:px-8 py-16 md:py-24">
+          <FAQ title="Häufige Fragen zur Kundenverwaltung" items={faqItems} />
+        </div>
       </main>
 
       <Footer />
