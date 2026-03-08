@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { ProductHero } from "@/components/product-hero";
+import SolutionHero from "@/components/SolutionHero";
 import FeatureShowcaseSection from "@/components/FeatureShowcaseSection";
 import IntermediateSection from "@/components/IntermediateSection";
 import PlaceholderVisual from "@/components/PlaceholderVisual";
@@ -18,15 +18,13 @@ export default function HandwerkPage() {
       <Header />
 
       <main>
-        <ProductHero
-          title="Buchhaltung für Handwerk & Dienstleistung"
+        <SolutionHero
+          title="Buchhaltung für Handwerk & Dienstleistung."
+          titleHighlight="Handwerk & Dienstleistung"
           description="Auf der Baustelle, beim Kunden oder in der Werkstatt – BillCraft ist so einfach, dass Sie Ihre Buchhaltung auch unterwegs erledigen können. Ohne Vorkenntnisse, ohne Komplexität."
           ctaText="Kostenlos testen"
-          ctaHref="#signup"
           headingId="handwerk-hero-heading"
-        >
-          <PlaceholderVisual label="Handwerker Dashboard" />
-        </ProductHero>
+        />
 
         <FeatureShowcaseSection
           tag="Mobil"

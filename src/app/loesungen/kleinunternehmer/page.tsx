@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { ProductHero } from "@/components/product-hero";
+import SolutionHero from "@/components/SolutionHero";
 import FeatureShowcaseSection from "@/components/FeatureShowcaseSection";
 import IntermediateSection from "@/components/IntermediateSection";
 import PlaceholderVisual from "@/components/PlaceholderVisual";
@@ -18,15 +18,13 @@ export default function KleinunternehmerPage() {
       <Header />
 
       <main>
-        <ProductHero
-          title="Buchhaltung für Kleinunternehmer"
+        <SolutionHero
+          title="Buchhaltung für Kleinunternehmer."
+          titleHighlight="Kleinunternehmer"
           description="Alles, was Sie für Ihre Buchhaltung brauchen – in einer Lösung. Rechnungen, Belege, Zahlungen und Steuerauswertungen. Einfach, verständlich und rechtskonform."
           ctaText="Kostenlos testen"
-          ctaHref="#signup"
           headingId="kleinunternehmer-hero-heading"
-        >
-          <PlaceholderVisual label="Kleinunternehmer Dashboard" />
-        </ProductHero>
+        />
 
         <FeatureShowcaseSection
           tag="Compliance"

@@ -17,6 +17,8 @@ export interface FeatureShowcaseSectionProps {
   children: React.ReactNode;
 }
 
+const ease = [0.22, 1, 0.36, 1] as const;
+
 const FeatureShowcaseSection: React.FC<FeatureShowcaseSectionProps> = ({
   tag,
   headline,
@@ -31,40 +33,39 @@ const FeatureShowcaseSection: React.FC<FeatureShowcaseSectionProps> = ({
 
   return (
     <section
-      className="relative w-full py-16 md:py-24 overflow-hidden bg-background"
+      className="relative w-full py-16 md:py-24 bg-background"
       aria-labelledby={`showcase-heading-${tag.replace(/\s+/g, "-").toLowerCase()}`}
     >
-      <div className="container mx-auto px-4 md:px-6 lg:px-8">
-        {/* Karte mit grauem Hintergrund – höher, übersichtlicher */}
+      <div className="container mx-auto max-w-7xl px-4 md:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.1 }}
-          transition={{ duration: 0.4, ease: "easeOut" }}
-          className="rounded-2xl md:rounded-3xl bg-gray border border-gray/80 shadow-lg overflow-hidden min-h-[420px] md:min-h-[480px]"
+          transition={{ duration: 0.4, ease }}
+          className="rounded-2xl md:rounded-3xl bg-gray border border-foreground/[0.06] overflow-hidden"
         >
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center px-6 py-10 pb-14 md:py-12 md:px-12 lg:p-16 min-h-[420px] md:min-h-[480px]">
-            {/* Mobile: Text zuerst (order-1), dann Visual (order-2). Desktop: Reihenfolge per imagePosition */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center p-6 md:p-10 lg:p-14">
+            {/* Visual */}
             <motion.div
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.4, ease: "easeOut" }}
-              className={`order-2 mb-8 lg:mb-0 ${isImageLeft ? "lg:order-1" : "lg:order-2"}`}
+              transition={{ duration: 0.5, ease }}
+              className={`order-2 ${isImageLeft ? "lg:order-1" : "lg:order-2"}`}
             >
               {children}
             </motion.div>
 
-            {/* Text + CTA – mobile: oben; desktop: links/rechts je nach imagePosition */}
+            {/* Text + CTA */}
             <motion.div
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.4, ease: "easeOut", delay: 0.1 }}
-              className={`order-1 flex flex-col items-start text-left mb-10 lg:mb-0 ${isImageLeft ? "lg:order-2" : "lg:order-1"}`}
+              transition={{ duration: 0.5, ease, delay: 0.1 }}
+              className={`order-1 flex flex-col items-start text-left ${isImageLeft ? "lg:order-2" : "lg:order-1"}`}
             >
               <span
-                className={`inline-block px-3 py-1 rounded-full text-base font-semibold mb-4 ${tagClassName}`}
+                className={`inline-block px-3 py-1 rounded-full text-sm font-semibold mb-5 ${tagClassName}`}
               >
                 {tag}
               </span>
@@ -74,10 +75,15 @@ const FeatureShowcaseSection: React.FC<FeatureShowcaseSectionProps> = ({
               >
                 {headline}
               </h2>
-              <p className="text-lg text-foreground/90 leading-relaxed mb-8 max-w-xl">
+              <p className="text-base md:text-lg text-foreground/55 leading-relaxed mb-8 max-w-xl">
                 {description}
               </p>
-              <Button href={ctaHref} variant="primary" size="lg" className="w-full md:w-auto">
+              <Button
+                href={ctaHref}
+                variant="primary"
+                size="lg"
+                className="w-full md:w-auto"
+              >
                 {ctaText}
               </Button>
             </motion.div>

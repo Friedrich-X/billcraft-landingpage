@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { ProductHero } from "@/components/product-hero";
+import SolutionHero from "@/components/SolutionHero";
 import FeatureShowcaseSection from "@/components/FeatureShowcaseSection";
 import IntermediateSection from "@/components/IntermediateSection";
 import PlaceholderVisual from "@/components/PlaceholderVisual";
@@ -18,15 +18,13 @@ export default function StartupsPage() {
       <Header />
 
       <main>
-        <ProductHero
-          title="Buchhaltung für Startups & KMUs"
+        <SolutionHero
+          title="Buchhaltung für Startups & KMUs."
+          titleHighlight="Startups & KMUs"
           description="Eine Lösung, die mit Ihrem Unternehmen wächst. Von den ersten Rechnungen bis zu detaillierten Finanzberichten – BillCraft skaliert mit Ihren Anforderungen."
           ctaText="Kostenlos testen"
-          ctaHref="#signup"
           headingId="startups-hero-heading"
-        >
-          <PlaceholderVisual label="Startup Dashboard" />
-        </ProductHero>
+        />
 
         <FeatureShowcaseSection
           tag="Skalierung"

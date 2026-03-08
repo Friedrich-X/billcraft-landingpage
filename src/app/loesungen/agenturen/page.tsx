@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { ProductHero } from "@/components/product-hero";
+import SolutionHero from "@/components/SolutionHero";
 import FeatureShowcaseSection from "@/components/FeatureShowcaseSection";
 import IntermediateSection from "@/components/IntermediateSection";
 import PlaceholderVisual from "@/components/PlaceholderVisual";
@@ -18,15 +18,13 @@ export default function AgenturenPage() {
       <Header />
 
       <main>
-        <ProductHero
-          title="Buchhaltung für Agenturen & Kreative"
+        <SolutionHero
+          title="Buchhaltung für Agenturen & Kreative."
+          titleHighlight="Agenturen & Kreative"
           description="Mehrere Kunden, parallele Projekte und unterschiedliche Abrechnungsmodelle – BillCraft gibt Ihnen den Überblick und macht die Abrechnung zum Kinderspiel."
           ctaText="Kostenlos testen"
-          ctaHref="#signup"
           headingId="agenturen-hero-heading"
-        >
-          <PlaceholderVisual label="Agentur Dashboard" />
-        </ProductHero>
+        />
 
         <FeatureShowcaseSection
           tag="Projekte"

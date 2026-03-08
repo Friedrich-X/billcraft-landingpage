@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { ProductHero } from "@/components/product-hero";
+import SolutionHero from "@/components/SolutionHero";
 import FeatureShowcaseSection from "@/components/FeatureShowcaseSection";
 import IntermediateSection from "@/components/IntermediateSection";
 import PlaceholderVisual from "@/components/PlaceholderVisual";
@@ -18,15 +18,13 @@ export default function EcommercePage() {
       <Header />
 
       <main>
-        <ProductHero
-          title="Buchhaltung für E-Commerce & Online-Shops"
+        <SolutionHero
+          title="Buchhaltung für E-Commerce & Online-Shops."
+          titleHighlight="E-Commerce"
           description="Viele Bestellungen, viele Rechnungen, viele Belege – BillCraft bringt Ordnung in den Alltag von Online-Händlern. Automatisierte Prozesse für mehr Effizienz."
           ctaText="Kostenlos testen"
-          ctaHref="#signup"
           headingId="ecommerce-hero-heading"
-        >
-          <PlaceholderVisual label="E-Commerce Dashboard" />
-        </ProductHero>
+        />
 
         <FeatureShowcaseSection
           tag="Massenrechnungen"
