@@ -114,7 +114,7 @@ export default function BlogPage() {
           </div>
 
           {/* Blog Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-5 gap-y-8">
             {blogPosts.map((post) => (
               <Link
                 key={post.title}
