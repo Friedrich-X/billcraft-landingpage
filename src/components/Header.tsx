@@ -127,31 +127,31 @@ const Header: React.FC = () => {
       icon: Users,
       label: "Kundenverwaltung",
       description: "Verwalte deine Kunden zentral und übersichtlich",
-      href: "#kunden",
+      href: "/kunden",
     },
     {
       icon: Receipt,
       label: "Belege",
       description: "Digitalisiere und organisiere alle Belege",
-      href: "#belege",
+      href: "/belege",
     },
     {
       icon: CreditCard,
       label: "Zahlungen",
       description: "Behalte alle Zahlungen im Überblick",
-      href: "#zahlungen",
+      href: "/zahlungen",
     },
     {
       icon: BarChart3,
       label: "Berichte",
       description: "Analysiere deine Finanzen mit detaillierten Reports",
-      href: "#berichte",
+      href: "/berichte",
     },
     {
       icon: Sparkles,
       label: "KI-Funktionen",
       description: "Intelligente Automatisierung durch künstliche Intelligenz",
-      href: "#ki",
+      href: "/ki",
     },
   ];
 
@@ -163,7 +163,7 @@ const Header: React.FC = () => {
           icon: Info,
           label: "Über uns",
           description: "Lerne das Team hinter BillCraft kennen",
-          href: "#about",
+          href: "/ueber-uns",
         },
       ],
     },
@@ -174,13 +174,13 @@ const Header: React.FC = () => {
           icon: BookOpen,
           label: "Blog",
           description: "Tipps und News rund um Buchhaltung",
-          href: "#blog",
+          href: "/blog",
         },
         {
           icon: Zap,
           label: "Changelog",
           description: "Alle neuen Features und Updates",
-          href: "#changelog",
+          href: "/changelog",
         },
       ],
     },
@@ -191,13 +191,13 @@ const Header: React.FC = () => {
           icon: HelpCircle,
           label: "Support Center",
           description: "Hilfe und Antworten auf deine Fragen",
-          href: "#support",
+          href: "/support",
         },
         {
           icon: Mail,
           label: "Kontakt",
           description: "Schreib uns eine Nachricht",
-          href: "#kontakt",
+          href: "/kontakt",
         },
       ],
     },
@@ -210,30 +210,30 @@ const Header: React.FC = () => {
         description:
           "Starte direkt mit digitaler Buchhaltung in deine Selbstständigkeit",
         image: "/images/freelancer.jpg", // Platzhalter
-        href: "#freelancer",
+        href: "/loesungen/freelancer",
       },
       {
         label: "Für Kleinunternehmer",
         description:
           "Nutze deine Zeit sinnvoll und setze auf einfache und verständliche Buchhaltung",
         image: "/images/kleinunternehmer.jpg",
-        href: "#kleinunternehmer",
+        href: "/loesungen/kleinunternehmer",
       },
       {
         label: "Für Startups & KMUs",
         description:
           "Behalte deine Finanzen im Blick und steuere dein Unternehmen mit Effizienz zum Erfolg",
         image: "/images/startups.jpg", // Platzhalter
-        href: "#startups",
+        href: "/loesungen/startups",
       },
     ],
     side: [
       {
         category: "Nach Zielgruppe",
         items: [
-          { label: "E-Commerce & Online-Shops", href: "#ecommerce" },
-          { label: "Agenturen & Kreative", href: "#agenturen" },
-          { label: "Handwerk & Dienstleistung", href: "#handwerk" },
+          { label: "E-Commerce & Online-Shops", href: "/loesungen/ecommerce" },
+          { label: "Agenturen & Kreative", href: "/loesungen/agenturen" },
+          { label: "Handwerk & Dienstleistung", href: "/loesungen/handwerk" },
         ],
       },
     ],
@@ -422,7 +422,7 @@ const Header: React.FC = () => {
               </div>
               <div className="pt-6 border-t border-gray">
                 <Link
-                  href="#alle-features"
+                  href="/preise"
                   className="inline-flex items-center gap-2 text-base font-semibold text-blue hover:text-dark-blue transition-colors group"
                 >
                   Alle Features anzeigen
