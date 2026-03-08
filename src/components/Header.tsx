@@ -4,12 +4,29 @@ import Logo from "./Logo";
 import Link from "next/link";
 import Image from "next/image";
 import Button from "./Button";
-import { FileText, Users, Receipt, CreditCard, BarChart3, ChevronDown, Info, Briefcase, BookOpen, Zap, HelpCircle, Mail, Sparkles, ArrowRight } from "lucide-react";
+import {
+  FileText,
+  Users,
+  Receipt,
+  CreditCard,
+  BarChart3,
+  ChevronDown,
+  Info,
+  BookOpen,
+  Zap,
+  HelpCircle,
+  Mail,
+  Sparkles,
+  ArrowRight,
+} from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 /** Burger (2 Striche) → X. Außerhalb von Header, damit bei Dropdown-Klicks kein Re-Mount und keine Re-Animation. */
 const BurgerToCloseIcon = ({ open }: { open: boolean }) => (
-  <span className="relative w-6 h-6 flex items-center justify-center shrink-0" aria-hidden>
+  <span
+    className="relative w-6 h-6 flex items-center justify-center shrink-0"
+    aria-hidden
+  >
     <motion.span
       className="absolute left-1/2 top-1/2 h-0.5 w-5 bg-current rounded-full origin-center -translate-x-1/2 -translate-y-1/2"
       animate={{
@@ -34,7 +51,9 @@ const Header: React.FC = () => {
   const [headerHeight, setHeaderHeight] = useState(80);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [mobileExpandedSection, setMobileExpandedSection] = useState<"produkt" | "losungen" | "erkunden" | null>(null);
+  const [mobileExpandedSection, setMobileExpandedSection] = useState<
+    "produkt" | "losungen" | "erkunden" | null
+  >(null);
   const [isMegaMenuOpen, setIsMegaMenuOpen] = useState(false);
   const [isExploreMenuOpen, setIsExploreMenuOpen] = useState(false);
   const [isSolutionsMenuOpen, setIsSolutionsMenuOpen] = useState(false);
@@ -67,7 +86,9 @@ const Header: React.FC = () => {
     setMobileExpandedSection(null);
   };
 
-  const handleToggleMobileSection = (section: "produkt" | "losungen" | "erkunden") => {
+  const handleToggleMobileSection = (
+    section: "produkt" | "losungen" | "erkunden",
+  ) => {
     setMobileExpandedSection((prev) => (prev === section ? null : section));
   };
 
@@ -144,12 +165,6 @@ const Header: React.FC = () => {
           description: "Lerne das Team hinter BillCraft kennen",
           href: "#about",
         },
-        {
-          icon: Briefcase,
-          label: "Karriere",
-          description: "Werde Teil unseres Teams",
-          href: "#karriere",
-        },
       ],
     },
     {
@@ -192,19 +207,22 @@ const Header: React.FC = () => {
     main: [
       {
         label: "Für Freelancer & Selbstständige",
-        description: "Starte direkt mit digitaler Buchhaltung in deine Selbstständigkeit",
+        description:
+          "Starte direkt mit digitaler Buchhaltung in deine Selbstständigkeit",
         image: "/images/freelancer.jpg", // Platzhalter
         href: "#freelancer",
       },
       {
         label: "Für Kleinunternehmer",
-        description: "Nutze deine Zeit sinnvoll und setze auf einfache und verständliche Buchhaltung",
+        description:
+          "Nutze deine Zeit sinnvoll und setze auf einfache und verständliche Buchhaltung",
         image: "/images/kleinunternehmer.jpg",
         href: "#kleinunternehmer",
       },
       {
         label: "Für Startups & KMUs",
-        description: "Behalte deine Finanzen im Blick und steuere dein Unternehmen mit Effizienz zum Erfolg",
+        description:
+          "Behalte deine Finanzen im Blick und steuere dein Unternehmen mit Effizienz zum Erfolg",
         image: "/images/startups.jpg", // Platzhalter
         href: "#startups",
       },
@@ -221,9 +239,7 @@ const Header: React.FC = () => {
     ],
   };
 
-  const navItems = [
-    { label: "Preise", href: "/preise" },
-  ];
+  const navItems = [{ label: "Preise", href: "/preise" }];
 
   return (
     <header
@@ -259,10 +275,15 @@ const Header: React.FC = () => {
                 aria-expanded={isMegaMenuOpen}
               >
                 Produkt
-                <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isMegaMenuOpen ? "rotate-180" : ""}`} />
+                <ChevronDown
+                  className={`w-4 h-4 transition-transform duration-200 ${isMegaMenuOpen ? "rotate-180" : ""}`}
+                />
               </button>
               {isMegaMenuOpen && (
-                <div className="absolute top-full left-0 right-0 h-10 bg-transparent pointer-events-none" aria-hidden />
+                <div
+                  className="absolute top-full left-0 right-0 h-10 bg-transparent pointer-events-none"
+                  aria-hidden
+                />
               )}
             </li>
 
@@ -278,10 +299,15 @@ const Header: React.FC = () => {
                 aria-expanded={isSolutionsMenuOpen}
               >
                 Lösungen
-                <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isSolutionsMenuOpen ? "rotate-180" : ""}`} />
+                <ChevronDown
+                  className={`w-4 h-4 transition-transform duration-200 ${isSolutionsMenuOpen ? "rotate-180" : ""}`}
+                />
               </button>
               {isSolutionsMenuOpen && (
-                <div className="absolute top-full left-0 right-0 h-10 bg-transparent pointer-events-none" aria-hidden />
+                <div
+                  className="absolute top-full left-0 right-0 h-10 bg-transparent pointer-events-none"
+                  aria-hidden
+                />
               )}
             </li>
 
@@ -308,10 +334,15 @@ const Header: React.FC = () => {
                 aria-expanded={isExploreMenuOpen}
               >
                 Erkunden
-                <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isExploreMenuOpen ? "rotate-180" : ""}`} />
+                <ChevronDown
+                  className={`w-4 h-4 transition-transform duration-200 ${isExploreMenuOpen ? "rotate-180" : ""}`}
+                />
               </button>
               {isExploreMenuOpen && (
-                <div className="absolute top-full left-0 right-0 h-10 bg-transparent pointer-events-none" aria-hidden />
+                <div
+                  className="absolute top-full left-0 right-0 h-10 bg-transparent pointer-events-none"
+                  aria-hidden
+                />
               )}
             </li>
           </ul>
@@ -395,8 +426,18 @@ const Header: React.FC = () => {
                   className="inline-flex items-center gap-2 text-base font-semibold text-blue hover:text-dark-blue transition-colors group"
                 >
                   Alle Features anzeigen
-                  <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  <svg
+                    className="w-4 h-4 group-hover:translate-x-1 transition-transform"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 5l7 7-7 7"
+                    />
                   </svg>
                 </Link>
               </div>
@@ -436,7 +477,12 @@ const Header: React.FC = () => {
                         className="group block bg-white hover:bg-gray rounded-lg overflow-hidden transition-all duration-200 cursor-pointer border border-gray hover:border-blue"
                       >
                         <div className="relative w-full h-40 overflow-hidden">
-                          <Image src={item.image} alt={item.label} fill className="object-cover" />
+                          <Image
+                            src={item.image}
+                            alt={item.label}
+                            fill
+                            className="object-cover"
+                          />
                         </div>
                         <div className="p-4">
                           <h4 className="font-semibold text-foreground mb-2 group-hover:text-blue transition-colors text-base">
@@ -517,7 +563,10 @@ const Header: React.FC = () => {
                             key={item.label}
                             initial={{ opacity: 0, y: -5 }}
                             animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.2, delay: categoryIndex * 0.1 + itemIndex * 0.05 }}
+                            transition={{
+                              duration: 0.2,
+                              delay: categoryIndex * 0.1 + itemIndex * 0.05,
+                            }}
                           >
                             <Link
                               href={item.href}
@@ -549,19 +598,19 @@ const Header: React.FC = () => {
 
       {/* Burger-Menu Overlay – unter dem Header (Logo + Icon bleiben fix), nur Inhalt scrollbar */}
       <AnimatePresence>
-          {isMobileMenuOpen && (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.2 }}
-              className="lg:hidden fixed left-0 right-0 bottom-0 z-40 bg-white flex flex-col border-t border-gray"
-              style={{ top: headerHeight }}
-            >
-              {/* Gleicher Container wie Nav (Zeile 562): Listen + Buttons, Buttons unten sticky */}
-              <div className="container mx-auto max-w-7xl w-full px-4 md:px-6 lg:px-8 flex-1 flex flex-col min-h-0">
-                {/* Mitte: nur hier scrollbar */}
-                <div className="flex-1 min-h-0 overflow-y-auto overflow-x-hidden py-6">
+        {isMobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="lg:hidden fixed left-0 right-0 bottom-0 z-40 bg-white flex flex-col border-t border-gray"
+            style={{ top: headerHeight }}
+          >
+            {/* Gleicher Container wie Nav (Zeile 562): Listen + Buttons, Buttons unten sticky */}
+            <div className="container mx-auto max-w-7xl w-full px-4 md:px-6 lg:px-8 flex-1 flex flex-col min-h-0">
+              {/* Mitte: nur hier scrollbar */}
+              <div className="flex-1 min-h-0 overflow-y-auto overflow-x-hidden py-6">
                 {/* Einheitliche Zeilenhöhe für alle Hauptpunkte (Produkt, Lösungen, Preise, Erkunden) */}
                 <div className="border-b border-gray py-2">
                   <button
@@ -570,7 +619,10 @@ const Header: React.FC = () => {
                     aria-expanded={mobileExpandedSection === "produkt"}
                   >
                     Produkt
-                    <ChevronDown className={`w-5 h-5 shrink-0 transition-transform duration-200 ${mobileExpandedSection === "produkt" ? "rotate-180" : ""}`} aria-hidden />
+                    <ChevronDown
+                      className={`w-5 h-5 shrink-0 transition-transform duration-200 ${mobileExpandedSection === "produkt" ? "rotate-180" : ""}`}
+                      aria-hidden
+                    />
                   </button>
                   <AnimatePresence>
                     {mobileExpandedSection === "produkt" && (
@@ -591,7 +643,10 @@ const Header: React.FC = () => {
                                 onClick={handleCloseMobileMenu}
                                 className="flex items-center gap-3 px-3 py-2.5 text-foreground/80 hover:text-blue hover:bg-gray/50 rounded-lg font-medium transition-all"
                               >
-                                <Icon className="w-5 h-5 text-blue shrink-0" aria-hidden />
+                                <Icon
+                                  className="w-5 h-5 text-blue shrink-0"
+                                  aria-hidden
+                                />
                                 {item.label}
                               </Link>
                             );
@@ -610,7 +665,10 @@ const Header: React.FC = () => {
                     aria-expanded={mobileExpandedSection === "losungen"}
                   >
                     Lösungen
-                    <ChevronDown className={`w-5 h-5 shrink-0 transition-transform duration-200 ${mobileExpandedSection === "losungen" ? "rotate-180" : ""}`} aria-hidden />
+                    <ChevronDown
+                      className={`w-5 h-5 shrink-0 transition-transform duration-200 ${mobileExpandedSection === "losungen" ? "rotate-180" : ""}`}
+                      aria-hidden
+                    />
                   </button>
                   <AnimatePresence>
                     {mobileExpandedSection === "losungen" && (
@@ -640,10 +698,13 @@ const Header: React.FC = () => {
                                 onClick={handleCloseMobileMenu}
                                 className="flex items-center gap-2 py-2 text-blue hover:text-dark-blue font-medium text-sm transition-colors"
                               >
-                                <ArrowRight className="w-4 h-4 shrink-0" aria-hidden />
+                                <ArrowRight
+                                  className="w-4 h-4 shrink-0"
+                                  aria-hidden
+                                />
                                 {item.label}
                               </Link>
-                            ))
+                            )),
                           )}
                         </div>
                       </motion.div>
@@ -673,7 +734,10 @@ const Header: React.FC = () => {
                     aria-expanded={mobileExpandedSection === "erkunden"}
                   >
                     Erkunden
-                    <ChevronDown className={`w-5 h-5 shrink-0 transition-transform duration-200 ${mobileExpandedSection === "erkunden" ? "rotate-180" : ""}`} aria-hidden />
+                    <ChevronDown
+                      className={`w-5 h-5 shrink-0 transition-transform duration-200 ${mobileExpandedSection === "erkunden" ? "rotate-180" : ""}`}
+                      aria-hidden
+                    />
                   </button>
                   <AnimatePresence>
                     {mobileExpandedSection === "erkunden" && (
@@ -695,32 +759,47 @@ const Header: React.FC = () => {
                                   onClick={handleCloseMobileMenu}
                                   className="flex items-center gap-3 px-3 py-2.5 text-foreground/80 hover:text-blue hover:bg-gray/50 rounded-lg font-medium transition-all"
                                 >
-                                  <Icon className="w-5 h-5 text-blue shrink-0" aria-hidden />
+                                  <Icon
+                                    className="w-5 h-5 text-blue shrink-0"
+                                    aria-hidden
+                                  />
                                   {item.label}
                                 </Link>
                               );
-                            })
+                            }),
                           )}
                         </div>
                       </motion.div>
                     )}
                   </AnimatePresence>
                 </div>
-                </div>
-
-                {/* Unten fix: Buttons – gleicher Container */}
-                <div className="shrink-0 flex flex-col gap-3 py-4 border-t border-gray bg-white">
-                  <Button href="#signup" variant="primary" size="lg" className="w-full" onClick={handleCloseMobileMenu}>
-                    Kostenlos registrieren
-                  </Button>
-                  <Button href="#login" variant="outline" size="lg" className="w-full" onClick={handleCloseMobileMenu}>
-                    Anmelden
-                  </Button>
-                </div>
               </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
+
+              {/* Unten fix: Buttons – gleicher Container */}
+              <div className="shrink-0 flex flex-col gap-3 py-4 border-t border-gray bg-white">
+                <Button
+                  href="#signup"
+                  variant="primary"
+                  size="lg"
+                  className="w-full"
+                  onClick={handleCloseMobileMenu}
+                >
+                  Kostenlos registrieren
+                </Button>
+                <Button
+                  href="#login"
+                  variant="outline"
+                  size="lg"
+                  className="w-full"
+                  onClick={handleCloseMobileMenu}
+                >
+                  Anmelden
+                </Button>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 };

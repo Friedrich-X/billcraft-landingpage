@@ -5,48 +5,43 @@ import { Twitter, Instagram, Linkedin } from "lucide-react";
 
 const footerColumns = [
   {
-    title: "Lösungen",
+    title: "Produkt",
     links: [
-      { label: "Rechnungen", href: "#rechnungen" },
-      { label: "Angebote", href: "#angebote" },
-      { label: "Belege", href: "#belege" },
-      { label: "Kunden", href: "#kunden" },
-      { label: "Zahlungen", href: "#zahlungen" },
-      { label: "Berichte", href: "#berichte" },
-      { label: "KI-Funktionen", href: "#ki" },
-      { label: "Zeiterfassung", href: "#zeiterfassung" },
-      { label: "Mahnwesen", href: "#mahnwesen" },
-      { label: "E-Mail-Versand", href: "#e-mail-versand" },
-      { label: "Tarife vergleichen", href: "/preise" },
+      { label: "Rechnungen", href: "/rechnungen" },
+      { label: "Kundenverwaltung", href: "/kunden" },
+      { label: "Belege", href: "/belege" },
+      { label: "Zahlungen", href: "/zahlungen" },
+      { label: "Berichte", href: "/berichte" },
+      { label: "KI-Funktionen", href: "/ki" },
+      { label: "Preise", href: "/preise" },
     ],
   },
   {
-    title: "Entdecken",
+    title: "Lösungen",
     links: [
-      { label: "KI-Funktionen", href: "#ki" },
-      { label: "Zeiterfassung", href: "#zeiterfassung" },
-      { label: "Mahnwesen", href: "#mahnwesen" },
-      { label: "E-Mail-Versand", href: "#e-mail-versand" },
+      { label: "Für Freelancer", href: "/loesungen/freelancer" },
+      { label: "Für Kleinunternehmer", href: "/loesungen/kleinunternehmer" },
+      { label: "Für Startups & KMUs", href: "/loesungen/startups" },
+      { label: "Für E-Commerce", href: "/loesungen/ecommerce" },
+      { label: "Für Agenturen", href: "/loesungen/agenturen" },
+      { label: "Für Handwerk", href: "/loesungen/handwerk" },
     ],
   },
   {
     title: "Ressourcen",
     links: [
-      { label: "Dokumentation", href: "#dokumentation" },
-      { label: "Hilfe-Center", href: "#hilfe" },
-      { label: "Changelog", href: "#changelog" },
-      { label: "Problemlösung", href: "#problemloesung" },
-      { label: "Forum", href: "#forum" },
-      { label: "Entwickler", href: "#entwickler" },
-      { label: "Kontakt", href: "#kontakt" },
-      { label: "Karriere", href: "#karriere" },
+      { label: "Blog", href: "/blog" },
+      { label: "Changelog", href: "/changelog" },
+      { label: "Support Center", href: "/support" },
+      { label: "Kontakt", href: "/kontakt" },
     ],
   },
   {
-    title: "Loslegen",
+    title: "Unternehmen",
     links: [
+      { label: "Über uns", href: "/ueber-uns" },
       { label: "Kostenlos anmelden", href: "#signup" },
-      { label: "Einloggen", href: "#login" },
+      { label: "Anmelden", href: "#login" },
     ],
   },
 ];
@@ -124,7 +119,7 @@ const Footer: React.FC = () => {
               </h3>
               <ul className="space-y-4">
                 {column.links.map((link) => (
-                  <li key={link.href}>
+                  <li key={link.label}>
                     <Link
                       href={link.href}
                       className="text-base text-background/60 hover:text-blue transition-colors leading-relaxed"
@@ -152,19 +147,19 @@ const Footer: React.FC = () => {
               Cookie-Einstellungen
             </Link>
             <Link
-              href="#impressum"
+              href="/impressum"
               className="text-background/50 hover:text-background transition-colors"
             >
               Impressum
             </Link>
             <Link
-              href="#datenschutz"
+              href="/datenschutz"
               className="text-background/50 hover:text-background transition-colors"
             >
               Datenschutz
             </Link>
             <Link
-              href="#agb"
+              href="/agb"
               className="text-background/50 hover:text-background transition-colors"
             >
               AGB

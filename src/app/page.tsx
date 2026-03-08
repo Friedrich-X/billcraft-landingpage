@@ -21,11 +21,11 @@ export default function Home() {
         <div className="container mx-auto">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-semibold text-foreground mb-6 leading-tight">
-              Buchhaltung sollte{" "}
-              <span className="text-blue">nicht kompliziert</span> sein.
+              Buchhaltung, die sich{" "}
+              <span className="text-blue">von selbst erledigt</span>.
             </h1>
             <p className="text-xl md:text-2xl text-foreground/80 mb-12 max-w-3xl mx-auto leading-relaxed">
-              Ihr zweites Gehirn für Rechnungen, Belege und Zahlen – einfach organisiert, immer griffbereit. So behalten Sie den Überblick, ohne sich zu verzetteln.
+              Dein intelligentes Archiv für Belege, Rechnungen und Stammdaten. Einfach organisiert, immer griffbereit, KI-gestützt.
             </p>
             <div className="flex flex-col items-center gap-6">
               <Button href="#signup" variant="primary" size="lg">

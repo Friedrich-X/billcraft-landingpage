@@ -57,7 +57,7 @@ const AISection: React.FC = () => {
             Intelligente Automatisierung für deine Buchhaltung – weniger Tipparbeit, mehr Fokus auf dein Business.
           </p>
           
-          <Button href="#ki" variant="secondary" size="lg">
+          <Button href="/ki" variant="secondary" size="lg">
             Entdecken Sie mehr!
           </Button>
         </div>

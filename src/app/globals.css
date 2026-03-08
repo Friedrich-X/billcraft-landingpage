@@ -13,6 +13,7 @@
   --graphite-black: #252525;
   --white: #FFFFFF;
   --gray: #EFEFF6;
+  --border-color: #252525;
   
   /* Semantic Colors */
   --background: #ffffff;
@@ -27,7 +28,7 @@
   --color-graphite-black: var(--graphite-black);
   --color-white: var(--white);
   --color-gray: var(--gray);
-  
+  --color-border-color: var(--border-color);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   
