@@ -40,7 +40,7 @@ const faqItems = [
 
 export default function BelegePage() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-dvh bg-background">
       <Header />
 
       <main>

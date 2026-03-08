@@ -112,13 +112,13 @@ const KiBelegErkennungVisual: React.FC = () => {
             {/* Scan line overlay */}
             {showScanLine && (
               <motion.div
-                initial={{ top: 0 }}
-                animate={{ top: "100%" }}
+                initial={{ y: 0 }}
+                animate={{ y: "100%" }}
                 transition={{ duration: 1.8, ease: "linear" }}
                 className="absolute left-0 right-0 h-0.5 z-10"
               >
                 <div className="w-full h-0.5 bg-purple-500 shadow-[0_0_8px_rgba(147,51,234,0.5)]" />
-                <div className="w-full h-8 bg-gradient-to-b from-purple-500/15 to-transparent -mt-4" />
+                <div className="w-full h-8 -mt-4" />
               </motion.div>
             )}
 

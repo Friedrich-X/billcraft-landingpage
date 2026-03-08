@@ -245,9 +245,7 @@ const Header: React.FC = () => {
     <header
       ref={headerRef}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? "bg-white/80 backdrop-blur-lg shadow-md py-4"
-          : "bg-transparent py-6"
+        isScrolled ? "bg-white shadow-md py-4" : "bg-transparent py-6"
       }`}
     >
       <nav className="container mx-auto max-w-7xl px-4 md:px-6 lg:px-8 relative">
@@ -386,7 +384,7 @@ const Header: React.FC = () => {
           >
             <div className="container mx-auto max-w-7xl px-4 md:px-6 lg:px-8">
               <div className="mb-8">
-                <h3 className="text-xs font-semibold text-blue uppercase tracking-wider mb-1">
+                <h3 className="text-xs font-semibold text-blue uppercase mb-1">
                   Produkt Features
                 </h3>
               </div>
@@ -459,7 +457,7 @@ const Header: React.FC = () => {
           >
             <div className="container mx-auto max-w-7xl px-4 md:px-6 lg:px-8">
               <div className="mb-8">
-                <h3 className="text-xs font-semibold text-blue uppercase tracking-wider mb-1">
+                <h3 className="text-xs font-semibold text-blue uppercase mb-1">
                   Lösungen für jedes Business
                 </h3>
               </div>
@@ -505,7 +503,7 @@ const Header: React.FC = () => {
                       transition={{ duration: 0.2, delay: 0.15 }}
                     >
                       <div className="mb-4">
-                        <h3 className="text-xs font-semibold text-foreground/50 uppercase tracking-wider">
+                        <h3 className="text-xs font-semibold text-foreground/50 uppercase">
                           {category.category}
                         </h3>
                       </div>
@@ -551,7 +549,7 @@ const Header: React.FC = () => {
                     transition={{ duration: 0.2, delay: categoryIndex * 0.1 }}
                   >
                     <div className="mb-6">
-                      <h3 className="text-xs font-semibold text-blue uppercase tracking-wider">
+                      <h3 className="text-xs font-semibold text-blue uppercase">
                         {category.category}
                       </h3>
                     </div>
@@ -627,9 +625,9 @@ const Header: React.FC = () => {
                   <AnimatePresence>
                     {mobileExpandedSection === "produkt" && (
                       <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: "auto", opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
                         transition={{ duration: 0.2 }}
                         className="overflow-hidden"
                       >
@@ -673,9 +671,9 @@ const Header: React.FC = () => {
                   <AnimatePresence>
                     {mobileExpandedSection === "losungen" && (
                       <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: "auto", opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
                         transition={{ duration: 0.2 }}
                         className="overflow-hidden"
                       >
@@ -742,9 +740,9 @@ const Header: React.FC = () => {
                   <AnimatePresence>
                     {mobileExpandedSection === "erkunden" && (
                       <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: "auto", opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
                         transition={{ duration: 0.2 }}
                         className="overflow-hidden"
                       >

@@ -39,7 +39,7 @@ const faqItems = [
 
 export default function KundenPage() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-dvh bg-background">
       <Header />
 
       <main>

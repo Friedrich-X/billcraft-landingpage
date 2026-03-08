@@ -130,7 +130,7 @@ export default function UeberUnsContent() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4, delay: 0.5, ease }}
-            className="absolute bottom-6 left-6 bg-white/90 backdrop-blur-sm rounded-xl px-5 py-3 shadow-lg"
+            className="absolute bottom-6 left-6 bg-white rounded-xl px-5 py-3 shadow-lg"
           >
             <p className="font-semibold text-foreground text-sm leading-tight">
               Elias Ratt
@@ -149,36 +149,34 @@ export default function UeberUnsContent() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, ease }}
-          className="font-semibold text-foreground mb-18 text-center"
+          className="font-semibold text-foreground mb-14 text-center"
         >
           Vom Studienprojekt zum Produkt
         </motion.h2>
 
-        <div className="max-w-5xl mx-auto divide-y divide-foreground/10">
+        <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6">
           {steps.map((step, i) => (
             <motion.div
               key={step.num}
-              initial={{ opacity: 0, y: 15 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.4, delay: i * 0.12, ease }}
-              className="flex flex-col md:flex-row md:items-start gap-4 md:gap-6 py-10 first:pt-0"
+              transition={{ duration: 0.5, delay: i * 0.12, ease }}
+              className="relative"
             >
               {/* Number */}
               <span
-                className={`text-4xl font-bold ${step.color} leading-none shrink-0 md:w-14 pt-0.5`}
+                className={`text-5xl md:text-6xl font-bold ${step.color} leading-none mb-4 block opacity-20`}
               >
                 {step.num}
               </span>
               {/* Title + Description */}
-              <div className="flex-1 max-w-2xl">
-                <h3 className="text-xl font-semibold text-foreground mb-2">
-                  {step.title}
-                </h3>
-                <p className="text-foreground/50 leading-relaxed">
-                  {step.text}
-                </p>
-              </div>
+              <h3 className="!text-lg !font-semibold text-foreground !mb-2">
+                {step.title}
+              </h3>
+              <p className="text-[length:var(--font-caption)] text-foreground/50 leading-relaxed">
+                {step.text}
+              </p>
             </motion.div>
           ))}
         </div>
@@ -192,7 +190,7 @@ export default function UeberUnsContent() {
         transition={{ duration: 0.6, ease }}
         className="bg-foreground rounded-3xl p-10 md:p-16 mb-28 text-center"
       >
-        <p className="text-white/50 text-sm font-semibold uppercase tracking-wider mb-4">
+        <p className="text-white/50 text-sm font-semibold uppercase mb-4">
           Unsere Mission
         </p>
         <p className="text-2xl md:text-3xl lg:text-4xl text-white font-semibold leading-snug max-w-4xl mx-auto">

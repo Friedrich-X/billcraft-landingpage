@@ -82,7 +82,7 @@ const relatedPosts = [
 
 export default function BlogArticlePage() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-dvh bg-background">
       <Header />
 
       <main className="pt-32 pb-24">
@@ -118,7 +118,7 @@ export default function BlogArticlePage() {
               </h1>
 
               {/* Meta */}
-              <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-[length:var(--font-caption)] text-foreground/50 mb-10">
+              <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-[length:var(--font-caption-small)] text-foreground/50 mb-10">
                 <span className="inline-flex items-center gap-2">
                   <User className="w-4 h-4" />
                   BillCraft Team
@@ -148,11 +148,11 @@ export default function BlogArticlePage() {
               <div className="max-w-none">
                 <h2
                   id="warum-korrekte-rechnungen"
-                  className="!text-[length:clamp(1.5rem,2.5vw,2rem)] !leading-[1.2] scroll-mt-28 !mt-10 !mb-4"
+                  className="!text-[length:clamp(1.5rem,3vw,2rem)] !leading-[1.25] scroll-mt-28 !mt-10 !mb-5"
                 >
                   Warum korrekte Rechnungen so wichtig sind
                 </h2>
-                <p className="text-[length:var(--font-body)] text-foreground/70 leading-relaxed mb-8">
+                <p className="text-lg text-foreground/70 leading-[1.75] mb-8">
                   Eine fehlerhafte Rechnung kann dazu führen, dass dein Kunde
                   den Vorsteuerabzug verliert – und du im schlimmsten Fall
                   Steuernachzahlungen leisten musst. Außerdem wirkt eine
@@ -162,11 +162,11 @@ export default function BlogArticlePage() {
 
                 <h2
                   id="pflichtangaben"
-                  className="!text-[length:clamp(1.5rem,2.5vw,2rem)] !leading-[1.2] scroll-mt-28 !mt-14 !mb-4"
+                  className="!text-[length:clamp(1.5rem,3vw,2rem)] !leading-[1.25] scroll-mt-28 !mt-16 !mb-5"
                 >
                   Die Pflichtangaben im Überblick
                 </h2>
-                <p className="text-[length:var(--font-body)] text-foreground/70 leading-relaxed mb-5">
+                <p className="text-lg text-foreground/70 leading-[1.75] mb-5">
                   Laut § 11 UStG müssen folgende Angaben auf jeder Rechnung
                   enthalten sein:
                 </p>
@@ -185,7 +185,7 @@ export default function BlogArticlePage() {
                   ].map((item) => (
                     <li
                       key={item}
-                      className="flex items-start gap-3 text-[length:var(--font-body)] text-foreground/70 leading-relaxed"
+                      className="flex items-start gap-3 text-lg text-foreground/70 leading-[1.75]"
                     >
                       <span className="w-1.5 h-1.5 rounded-full bg-blue mt-3 shrink-0" />
                       {item}
@@ -195,11 +195,11 @@ export default function BlogArticlePage() {
 
                 <h2
                   id="kleinbetragsrechnungen"
-                  className="!text-[length:clamp(1.5rem,2.5vw,2rem)] !leading-[1.2] scroll-mt-28 !mt-14 !mb-4"
+                  className="!text-[length:clamp(1.5rem,3vw,2rem)] !leading-[1.25] scroll-mt-28 !mt-16 !mb-5"
                 >
                   Sonderfall: Kleinbetragsrechnungen
                 </h2>
-                <p className="text-[length:var(--font-body)] text-foreground/70 leading-relaxed mb-8">
+                <p className="text-lg text-foreground/70 leading-[1.75] mb-8">
                   Für Rechnungen bis 400 Euro brutto gelten vereinfachte Regeln.
                   Hier reichen: Name und Anschrift des Leistenden, Menge und
                   Bezeichnung, Entgelt und Steuersatz sowie das
@@ -209,11 +209,11 @@ export default function BlogArticlePage() {
 
                 <h2
                   id="kleinunternehmerregelung"
-                  className="!text-[length:clamp(1.5rem,2.5vw,2rem)] !leading-[1.2] scroll-mt-28 !mt-14 !mb-4"
+                  className="!text-[length:clamp(1.5rem,3vw,2rem)] !leading-[1.25] scroll-mt-28 !mt-16 !mb-5"
                 >
                   Sonderfall: Kleinunternehmerregelung
                 </h2>
-                <p className="text-[length:var(--font-body)] text-foreground/70 leading-relaxed mb-8">
+                <p className="text-lg text-foreground/70 leading-[1.75] mb-8">
                   Wenn du die Kleinunternehmerregelung nach § 6 Abs. 1 Z 27 UStG
                   nutzt, darfst du keine Umsatzsteuer auf deinen Rechnungen
                   ausweisen. Stattdessen muss der Hinweis „Umsatzsteuerbefreit
@@ -222,7 +222,7 @@ export default function BlogArticlePage() {
 
                 <h2
                   id="haeufige-fehler"
-                  className="!text-[length:clamp(1.5rem,2.5vw,2rem)] !leading-[1.2] scroll-mt-28 !mt-14 !mb-4"
+                  className="!text-[length:clamp(1.5rem,3vw,2rem)] !leading-[1.25] scroll-mt-28 !mt-16 !mb-5"
                 >
                   Häufige Fehler vermeiden
                 </h2>
@@ -249,10 +249,10 @@ export default function BlogArticlePage() {
                       key={error.title}
                       className="border-l-2 border-orange-500 pl-5 py-1"
                     >
-                      <p className="font-semibold text-[length:var(--font-body)] text-foreground mb-1">
+                      <p className="font-semibold text-lg text-foreground mb-1">
                         {error.title}
                       </p>
-                      <p className="text-[length:var(--font-caption)] text-foreground/60 leading-relaxed">
+                      <p className="text-[length:var(--font-caption-small)] text-foreground/60 leading-relaxed">
                         {error.text}
                       </p>
                     </div>
@@ -261,11 +261,11 @@ export default function BlogArticlePage() {
 
                 <h2
                   id="billcraft-hilft"
-                  className="!text-[length:clamp(1.5rem,2.5vw,2rem)] !leading-[1.2] scroll-mt-28 !mt-14 !mb-4"
+                  className="!text-[length:clamp(1.5rem,3vw,2rem)] !leading-[1.25] scroll-mt-28 !mt-16 !mb-5"
                 >
                   So hilft dir BillCraft
                 </h2>
-                <p className="text-[length:var(--font-body)] text-foreground/70 leading-relaxed mb-8">
+                <p className="text-lg text-foreground/70 leading-[1.75] mb-8">
                   Mit BillCraft musst du dir um Pflichtangaben keine Gedanken
                   machen. Die Software sorgt automatisch dafür, dass alle
                   gesetzlichen Anforderungen erfüllt sind: fortlaufende
@@ -278,13 +278,13 @@ export default function BlogArticlePage() {
                   <h3 className="!text-[length:clamp(1.25rem,2vw,1.5rem)] !text-white !mb-3">
                     Rechtssichere Rechnungen in Sekunden
                   </h3>
-                  <p className="text-[length:var(--font-body)] text-white/70 mb-8">
+                  <p className="text-lg text-white/70 leading-[1.75] mb-8">
                     Erstelle deine erste Rechnung mit allen Pflichtangaben –
                     kostenlos und ohne Einrichtung.
                   </p>
                   <Link
                     href="/rechnungen"
-                    className="inline-flex items-center gap-2 bg-blue hover:bg-blue/90 text-white font-semibold px-7 py-3.5 rounded-xl transition-colors text-[length:var(--font-caption)]"
+                    className="inline-flex items-center gap-2 bg-blue hover:bg-blue/90 text-white font-semibold px-8 py-4 rounded-xl transition-colors text-lg"
                   >
                     Jetzt kostenlos starten
                     <ArrowUpRight className="w-4 h-4" />
@@ -297,7 +297,7 @@ export default function BlogArticlePage() {
             <aside className="lg:sticky lg:top-28 lg:self-start space-y-10">
               {/* Table of Contents */}
               <nav>
-                <h3 className="!text-[length:var(--font-caption-small)] !font-semibold uppercase tracking-wider !mb-5">
+                <h3 className="!text-[length:var(--font-caption-small)] !font-semibold uppercase !mb-5">
                   Inhaltsverzeichnis
                 </h3>
                 <ol className="space-y-2.5">
@@ -305,7 +305,7 @@ export default function BlogArticlePage() {
                     <li key={item.id}>
                       <a
                         href={`#${item.id}`}
-                        className="flex items-start gap-2.5 text-[length:var(--font-caption)] text-foreground/60 hover:text-blue transition-colors leading-snug"
+                        className="flex items-start gap-2.5 text-[length:var(--font-caption-small)] text-foreground/60 hover:text-blue transition-colors leading-snug"
                       >
                         <span className="text-foreground/30 font-medium tabular-nums shrink-0">
                           {String(i + 1).padStart(2, "0")}
@@ -319,7 +319,7 @@ export default function BlogArticlePage() {
 
               {/* Share */}
               <div>
-                <h3 className="!text-[length:var(--font-caption-small)] !font-semibold uppercase tracking-wider !mb-5">
+                <h3 className="!text-[length:var(--font-caption-small)] !font-semibold uppercase !mb-5">
                   Teilen
                 </h3>
                 <div className="flex items-center gap-2">
@@ -361,14 +361,14 @@ export default function BlogArticlePage() {
 
               {/* Tags */}
               <div>
-                <h3 className="!text-[length:var(--font-caption-small)] !font-semibold uppercase tracking-wider !mb-5">
+                <h3 className="!text-[length:var(--font-caption-small)] !font-semibold uppercase !mb-5">
                   Tags
                 </h3>
                 <div className="flex flex-wrap gap-2">
                   {tags.map((tag) => (
                     <span
                       key={tag}
-                      className="px-3 py-1.5 rounded-lg bg-gray/50 text-[length:var(--font-caption)] text-foreground/70 hover:bg-blue/10 hover:text-blue transition-colors cursor-pointer"
+                      className="px-3 py-1.5 rounded-lg bg-gray/50 text-[length:var(--font-caption-small)] text-foreground/70 hover:bg-blue/10 hover:text-blue transition-colors cursor-pointer"
                     >
                       {tag}
                     </span>
@@ -378,7 +378,7 @@ export default function BlogArticlePage() {
 
               {/* Related */}
               <div>
-                <h3 className="!text-[length:var(--font-caption-small)] !font-semibold uppercase tracking-wider !mb-5">
+                <h3 className="!text-[length:var(--font-caption-small)] !font-semibold uppercase !mb-5">
                   Weitere Artikel
                 </h3>
                 <div className="space-y-5">

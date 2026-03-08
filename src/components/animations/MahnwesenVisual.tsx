@@ -204,8 +204,8 @@ const MahnwesenVisual: React.FC = () => {
                       </motion.div>
                       {isCurrent && i < STEPS.length - 1 && (
                         <motion.div
-                          initial={{ opacity: 0, width: 0 }}
-                          animate={{ opacity: 1, width: "auto" }}
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: 1 }}
                           transition={{ duration: 0.3, delay: 0.3 }}
                           className="mt-1"
                         >
@@ -218,8 +218,8 @@ const MahnwesenVisual: React.FC = () => {
                       )}
                       {isCurrent && i === STEPS.length - 1 && (
                         <motion.div
-                          initial={{ opacity: 0, width: 0 }}
-                          animate={{ opacity: 1, width: "auto" }}
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: 1 }}
                           transition={{ duration: 0.3, delay: 0.3 }}
                           className="mt-1"
                         >

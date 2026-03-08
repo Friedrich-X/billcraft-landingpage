@@ -146,11 +146,11 @@ const BelegScannerVisual: React.FC = () => {
                 {phase === "scanning" && (
                   <motion.div
                     className="absolute left-0 right-0 h-0.5 bg-orange-500 shadow-[0_0_8px_rgba(249,115,22,0.6)]"
-                    initial={{ top: 0, opacity: 1 }}
-                    animate={{ top: "100%" }}
+                    initial={{ y: 0, opacity: 1 }}
+                    animate={{ y: "100%" }}
                     exit={{ opacity: 0 }}
                     transition={{
-                      top: { duration: 1.8, ease: SIGNATURE_EASE },
+                      y: { duration: 1.8, ease: SIGNATURE_EASE },
                       opacity: { duration: 0.2 },
                     }}
                   />
@@ -174,7 +174,7 @@ const BelegScannerVisual: React.FC = () => {
             {/* Extracted data area */}
             <div className="px-4 pb-3 space-y-1.5">
               <div className="flex items-center gap-1.5 mb-1">
-                <span className="text-[11px] font-medium text-foreground/50 uppercase tracking-wide">
+                <span className="text-[11px] font-medium text-foreground/50 uppercase">
                   Erkannte Daten
                 </span>
               </div>

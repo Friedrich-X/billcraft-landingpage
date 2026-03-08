@@ -160,7 +160,7 @@ const ChartAnimationVisual: React.FC = () => {
                     className="w-full rounded-t-md bg-purple-400/80 relative overflow-hidden"
                   >
                     {/* Gradient shine */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-purple-500/20 to-transparent" />
+                    <div className="absolute inset-0" />
                   </motion.div>
                 </div>
               ))}

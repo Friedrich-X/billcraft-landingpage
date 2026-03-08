@@ -190,7 +190,7 @@ const KiVorschlaegeVisual: React.FC = () => {
                   }}
                   className="space-y-1.5"
                 >
-                  <span className="text-[10px] font-semibold text-foreground/50 uppercase tracking-wider">
+                  <span className="text-[10px] font-semibold text-foreground/50 uppercase">
                     {group[0].label}
                   </span>
                   <div className="flex flex-wrap gap-1.5">

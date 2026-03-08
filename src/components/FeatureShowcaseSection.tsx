@@ -64,7 +64,7 @@ const FeatureShowcaseSection: React.FC<FeatureShowcaseSectionProps> = ({
               className={`order-1 flex flex-col items-start text-left mb-10 lg:mb-0 ${isImageLeft ? "lg:order-2" : "lg:order-1"}`}
             >
               <span
-                className={`inline-block px-3 py-1 rounded-full text-base font-semibold tracking-wider mb-4 ${tagClassName}`}
+                className={`inline-block px-3 py-1 rounded-full text-base font-semibold mb-4 ${tagClassName}`}
               >
                 {tag}
               </span>

@@ -36,7 +36,8 @@ const plans = [
   },
   {
     name: "Standard",
-    description: "Für Selbstständige und kleine Teams: volle Buchhaltung inkl. KI-Unterstützung.",
+    description:
+      "Für Selbstständige und kleine Teams: volle Buchhaltung inkl. KI-Unterstützung.",
     price: "24,99",
     period: "monat",
     cta: "Abo auswählen",
@@ -81,8 +82,7 @@ const comparisonRows: ComparisonRow[] = [
   {
     type: "feature",
     label: "Angebote erstellen",
-    description:
-      "Angebote pro Monat erstellen und an Kunden senden.",
+    description: "Angebote pro Monat erstellen und an Kunden senden.",
     values: ["Bis zu 5/Monat", "Unbegrenzt"],
   },
   {
@@ -125,15 +125,13 @@ const comparisonRows: ComparisonRow[] = [
   {
     type: "feature",
     label: "KI-Kategorisierung Belege",
-    description:
-      "Belege automatisch kategorisieren und zuordnen lassen.",
+    description: "Belege automatisch kategorisieren und zuordnen lassen.",
     values: ["dash", "check"],
   },
   {
     type: "feature",
     label: "KI-Rechnungstexte",
-    description:
-      "Vorschläge für Rechnungstexte und Beschreibungen per KI.",
+    description: "Vorschläge für Rechnungstexte und Beschreibungen per KI.",
     values: ["dash", "check"],
   },
   {
@@ -147,8 +145,7 @@ const comparisonRows: ComparisonRow[] = [
   {
     type: "feature",
     label: "Banking-Anbindung",
-    description:
-      "Konten anbinden und Buchungen automatisch abgleichen.",
+    description: "Konten anbinden und Buchungen automatisch abgleichen.",
     values: ["dash", "check"],
   },
   {
@@ -161,30 +158,26 @@ const comparisonRows: ComparisonRow[] = [
   {
     type: "feature",
     label: "API-Zugang",
-    description:
-      "Eigene Integrationen oder Automatisierungen per API nutzen.",
+    description: "Eigene Integrationen oder Automatisierungen per API nutzen.",
     values: ["dash", "check"],
   },
   { type: "subheading", label: "Sicherheit" },
   {
     type: "feature",
     label: "DSGVO-konform",
-    description:
-      "Datenverarbeitung nach EU-Datenschutzstandards.",
+    description: "Datenverarbeitung nach EU-Datenschutzstandards.",
     values: ["check", "check"],
   },
   {
     type: "feature",
     label: "Automatische Backups",
-    description:
-      "Regelmäßige Sicherung Ihrer Daten.",
+    description: "Regelmäßige Sicherung Ihrer Daten.",
     values: ["dash", "check"],
   },
   {
     type: "feature",
     label: "Zwei-Faktor-Authentifizierung",
-    description:
-      "Zusätzlicher Schutz für Ihr Konto per 2FA.",
+    description: "Zusätzlicher Schutz für Ihr Konto per 2FA.",
     values: ["dash", "check"],
   },
   { type: "subheading", label: "Unterstützung" },
@@ -198,8 +191,7 @@ const comparisonRows: ComparisonRow[] = [
   {
     type: "feature",
     label: "Hilfe & Dokumentation",
-    description:
-      "Anleitungen, FAQ und Wissensdatenbank.",
+    description: "Anleitungen, FAQ und Wissensdatenbank.",
     values: ["check", "check"],
   },
 ];
@@ -229,7 +221,7 @@ const preiseFaqItems: FAQItem[] = [
 
 export default function PreisePage() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-dvh bg-background">
       <Header />
 
       <main className="pt-32 pb-20">
@@ -237,7 +229,8 @@ export default function PreisePage() {
           {/* Hero – wie Evernote Compare: flex, zentriert, text-center */}
           <div className="max-w-4xl mx-auto text-center mb-16 md:mb-20">
             <h1 className="text-4xl md:text-5xl lg:text-7xl font-semibold text-foreground leading-tight">
-              Welches <span className="text-blue">BillCraft</span> ist das Richtige für mich?
+              Welches <span className="text-blue">BillCraft</span> ist das
+              Richtige für mich?
             </h1>
           </div>
 
@@ -253,7 +246,7 @@ export default function PreisePage() {
                 {/* Empfohlen-Tag: oben links am Rahmen, wie Evernote */}
                 {plan.recommended && (
                   <span
-                    className="absolute -top-3 left-6 px-4 py-1 rounded-full text-xs font-semibold uppercase tracking-wide bg-gray text-foreground/90 border border-gray shadow-sm"
+                    className="absolute -top-3 left-6 px-4 py-1 rounded-full text-xs font-semibold uppercase bg-gray text-foreground/90 border border-gray shadow-sm"
                     aria-hidden
                   >
                     Empfohlen
@@ -282,7 +275,7 @@ export default function PreisePage() {
                 >
                   {plan.cta}
                 </Button>
-                <p className="text-xs font-semibold text-foreground/70 uppercase tracking-wider mb-3">
+                <p className="text-xs font-semibold text-foreground/70 uppercase mb-3">
                   Was ist enthalten:
                 </p>
                 <ul className="space-y-3 flex-1" role="list">

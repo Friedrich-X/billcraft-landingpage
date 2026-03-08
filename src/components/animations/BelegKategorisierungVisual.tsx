@@ -164,7 +164,7 @@ const BelegKategorisierungVisual: React.FC = () => {
                   {/* Category badge area */}
                   <div className="mt-auto pt-3 border-t border-gray/30">
                     <div className="flex items-center justify-between">
-                      <span className="text-[11px] text-foreground/40 uppercase tracking-wide">
+                      <span className="text-[11px] text-foreground/40 uppercase">
                         Kategorie
                       </span>
                       <AnimatePresence mode="wait">

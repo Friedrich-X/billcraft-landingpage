@@ -171,8 +171,9 @@ const KundenUmsatzVisual: React.FC = () => {
                 <div className="w-full h-2.5 rounded-full bg-gray/60 overflow-hidden">
                   <motion.div
                     className={`h-full rounded-full ${entry.barColor}`}
-                    initial={{ width: 0 }}
-                    animate={visible ? { width: `${barWidth}%` } : { width: 0 }}
+                    style={{ width: `${barWidth}%`, transformOrigin: "left" }}
+                    initial={{ scaleX: 0 }}
+                    animate={visible ? { scaleX: 1 } : { scaleX: 0 }}
                     transition={{
                       duration: 0.6,
                       ease: SIGNATURE_EASE,

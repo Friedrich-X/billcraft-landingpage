@@ -17,6 +17,8 @@ export interface FAQProps {
   className?: string;
 }
 
+const ease = [0.22, 1, 0.36, 1] as const;
+
 const FAQ: React.FC<FAQProps> = ({ items, title, className = "" }) => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   const sectionId = "faq-heading";
@@ -39,22 +41,34 @@ const FAQ: React.FC<FAQProps> = ({ items, title, className = "" }) => {
     >
       <div className="w-full">
         {title && (
-          <h2
+          <motion.h2
             id={sectionId}
-            className="text-2xl md:text-5xl font-medium text-foreground text-center mb-8"
+            className="text-center"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.6, ease }}
           >
             {title}
-          </h2>
+          </motion.h2>
         )}
         <div className="border-t border-gray">
           {items.map((item, index) => {
             const isOpen = openIndex === index;
             return (
-              <div
+              <motion.div
                 key={index}
                 className="border-b border-gray"
                 role="region"
                 aria-labelledby={`faq-q-${index}`}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-40px" }}
+                transition={{
+                  duration: 0.5,
+                  delay: index * 0.08,
+                  ease,
+                }}
               >
                 <button
                   id={`faq-q-${index}`}
@@ -63,36 +77,19 @@ const FAQ: React.FC<FAQProps> = ({ items, title, className = "" }) => {
                   onKeyDown={(e) => handleKeyDown(e, index)}
                   aria-expanded={isOpen}
                   aria-controls={`faq-a-${index}`}
-                  className="w-full py-4 px-0 flex items-center justify-between gap-4 text-left font-medium text-foreground cursor-pointer bg-transparent border-none"
+                  className="w-full py-5 md:py-6 px-0 flex items-center justify-between gap-4 text-left text-lg md:text-xl font-medium text-foreground cursor-pointer bg-transparent border-none"
                 >
                   <span className="flex-1">{item.question}</span>
-                  <span
-                    className="shrink-0 w-8 h-8 relative flex items-center justify-center text-blue text-2xl leading-none select-none"
+                  <motion.span
+                    className="shrink-0 w-8 h-8 md:w-10 md:h-10 relative flex items-center justify-center text-blue text-2xl md:text-3xl leading-none select-none"
                     aria-hidden
+                    animate={{ rotate: isOpen ? 45 : 0 }}
+                    transition={{ duration: 0.3, ease }}
                   >
-                    <motion.span
-                      className="absolute inset-0 flex items-center justify-center"
-                      initial={false}
-                      animate={{
-                        opacity: isOpen ? 0 : 1,
-                        scale: isOpen ? 0.5 : 1,
-                      }}
-                      transition={{ duration: 0.2, ease: "easeInOut" }}
-                    >
+                    <span className="absolute inset-0 flex items-center justify-center">
                       +
-                    </motion.span>
-                    <motion.span
-                      className="absolute inset-0 flex items-center justify-center"
-                      initial={false}
-                      animate={{
-                        opacity: isOpen ? 1 : 0,
-                        scale: isOpen ? 1 : 0.5,
-                      }}
-                      transition={{ duration: 0.2, ease: "easeInOut" }}
-                    >
-                      −
-                    </motion.span>
-                  </span>
+                    </span>
+                  </motion.span>
                 </button>
                 <AnimatePresence initial={false}>
                   {isOpen && (
@@ -101,16 +98,19 @@ const FAQ: React.FC<FAQProps> = ({ items, title, className = "" }) => {
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: "auto", opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.25, ease: "easeInOut" }}
+                      transition={{
+                        height: { duration: 0.35, ease },
+                        opacity: { duration: 0.25, delay: 0.1 },
+                      }}
                       className="overflow-hidden"
                     >
-                      <p className="pb-4 pt-0 text-foreground/80 text-base leading-relaxed">
+                      <p className="pb-5 md:pb-6 pt-0 text-foreground/70 text-base md:text-lg leading-relaxed">
                         {item.answer}
                       </p>
                     </motion.div>
                   )}
                 </AnimatePresence>
-              </div>
+              </motion.div>
             );
           })}
         </div>

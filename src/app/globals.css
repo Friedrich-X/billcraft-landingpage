@@ -45,7 +45,7 @@
 }
 
 body {
-  background: var(--gradient-bg);
+  background: var(--background);
   color: var(--foreground);
   font-family:
     var(--font-sora),
@@ -68,23 +68,26 @@ main h6 {
   font-weight: 600;
   line-height: 1.15;
   color: var(--foreground);
+  text-wrap: balance;
+}
+
+main p,
+main li {
+  text-wrap: pretty;
 }
 
 main h1 {
   font-size: clamp(2.5rem, 5vw, 4.5rem); /* 40px → 72px */
-  letter-spacing: -0.02em;
   margin-bottom: 1.5rem;
 }
 
 main h2 {
   font-size: clamp(2rem, 4vw, 3.5rem); /* 32px → 56px */
-  letter-spacing: -0.015em;
   margin-bottom: 1.25rem;
 }
 
 main h3 {
   font-size: clamp(1.5rem, 2.5vw, 2rem); /* 24px → 32px */
-  letter-spacing: -0.01em;
   margin-bottom: 1rem;
 }
 
@@ -121,6 +124,16 @@ main h6 {
 
 .animate-blob {
   animation: blob 7s infinite;
+  animation-play-state: running;
+}
+
+/* Pause looping animations when off-screen */
+@media (prefers-reduced-motion: reduce) {
+  .animate-blob,
+  .animation-delay-2000,
+  .animation-delay-4000 {
+    animation: none;
+  }
 }
 
 .animation-delay-2000 {

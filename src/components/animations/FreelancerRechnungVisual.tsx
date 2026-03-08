@@ -82,7 +82,7 @@ const FreelancerRechnungVisual: React.FC = () => {
           <div className="p-4 space-y-3 text-sm flex-1 min-h-0 overflow-hidden">
             {/* Customer field */}
             <div>
-              <span className="text-xs text-foreground/50 uppercase tracking-wide">
+              <span className="text-xs text-foreground/50 uppercase">
                 Kunde
               </span>
               <motion.div
@@ -102,7 +102,7 @@ const FreelancerRechnungVisual: React.FC = () => {
 
             {/* Position */}
             <div>
-              <span className="text-xs text-foreground/50 uppercase tracking-wide">
+              <span className="text-xs text-foreground/50 uppercase">
                 Position
               </span>
               <motion.div

@@ -14,10 +14,12 @@ const InvoiceExampleCard: React.FC = () => {
     >
       <div className="p-6 md:p-8">
         <div className="flex justify-between items-start mb-6">
-          <span className="text-xs font-semibold uppercase tracking-wider text-blue">
+          <span className="text-xs font-semibold uppercase text-blue">
             BillCraft
           </span>
-          <span className="text-sm font-medium text-foreground/70">Rechnung</span>
+          <span className="text-sm font-medium text-foreground/70">
+            Rechnung
+          </span>
         </div>
         <div className="space-y-1 text-sm text-foreground/80 mb-6">
           <p>Rechnungsnummer: RE-2024-001</p>
