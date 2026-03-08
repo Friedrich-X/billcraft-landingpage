@@ -95,16 +95,6 @@ const blogPosts = [
   },
 ];
 
-const categoryColors: Record<string, string> = {
-  Wissen: "bg-blue/10 text-blue",
-  Tipps: "bg-green-500/10 text-green-600",
-  Technologie: "bg-purple-500/10 text-purple-600",
-  Steuern: "bg-orange-500/10 text-orange-600",
-  Leitfaden: "bg-pink/10 text-pink",
-  Produkt: "bg-blue/10 text-blue",
-  Vergleich: "bg-amber-500/10 text-amber-600",
-};
-
 export default function BlogPage() {
   return (
     <div className="min-h-screen bg-background">
@@ -124,14 +114,15 @@ export default function BlogPage() {
           </div>
 
           {/* Blog Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
             {blogPosts.map((post) => (
-              <article
+              <Link
                 key={post.title}
-                className="group rounded-2xl border border-gray/80 bg-white overflow-hidden hover:shadow-lg transition-shadow duration-300"
+                href={post.slug}
+                className="group cursor-pointer flex flex-col"
               >
                 {/* Image */}
-                <div className="aspect-[4/3] relative overflow-hidden bg-gray/30">
+                <div className="aspect-[4/3] relative overflow-hidden rounded-2xl bg-gray/30 mb-5">
                   <Image
                     src={post.image}
                     alt={post.title}
@@ -142,30 +133,17 @@ export default function BlogPage() {
                 </div>
 
                 {/* Content */}
-                <div className="p-5">
-                  <span
-                    className={`inline-block text-xs font-semibold px-2.5 py-1 rounded-full mb-3 ${
-                      categoryColors[post.category] ||
-                      "bg-gray/50 text-foreground/60"
-                    }`}
-                  >
-                    {post.category}
-                  </span>
-                  <h3 className="text-lg font-semibold text-foreground mb-2 leading-snug group-hover:text-blue transition-colors">
-                    {post.title}
-                  </h3>
-                  <p className="text-sm text-foreground/60 leading-relaxed mb-4">
-                    {post.description}
-                  </p>
-                  <Link
-                    href={post.slug}
-                    className="inline-flex items-center gap-1.5 text-sm font-semibold text-blue hover:text-dark-blue transition-colors"
-                  >
-                    Mehr lesen
-                    <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-                  </Link>
-                </div>
-              </article>
+                <h3 className="text-lg font-semibold text-foreground mb-2 leading-snug">
+                  {post.title}
+                </h3>
+                <p className="text-sm text-foreground/60 leading-relaxed flex-1">
+                  {post.description}
+                </p>
+                <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-foreground mt-4 group-hover:text-blue transition-colors">
+                  Mehr erfahren
+                  <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                </span>
+              </Link>
             ))}
           </div>
 
