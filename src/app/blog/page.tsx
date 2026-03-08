@@ -114,7 +114,7 @@ export default function BlogPage() {
           </div>
 
           {/* Blog Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-10">
             {blogPosts.map((post) => (
               <Link
                 key={post.title}
@@ -122,7 +122,7 @@ export default function BlogPage() {
                 className="group cursor-pointer flex flex-col"
               >
                 {/* Image */}
-                <div className="aspect-[4/3] relative overflow-hidden rounded-2xl bg-gray/30 mb-5">
+                <div className="aspect-[4/3] relative overflow-hidden rounded-2xl bg-gray/30 mb-3">
                   <Image
                     src={post.image}
                     alt={post.title}
@@ -133,13 +133,13 @@ export default function BlogPage() {
                 </div>
 
                 {/* Content */}
-                <h3 className="text-lg font-semibold text-foreground mb-2 leading-snug">
+                <h3 className="text-base font-semibold text-foreground mb-1 leading-snug">
                   {post.title}
                 </h3>
                 <p className="text-sm text-foreground/60 leading-relaxed flex-1">
                   {post.description}
                 </p>
-                <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-foreground mt-4 group-hover:text-blue transition-colors">
+                <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-foreground mt-2.5 group-hover:text-blue transition-colors">
                   Mehr erfahren
                   <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                 </span>
