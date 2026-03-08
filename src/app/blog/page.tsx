@@ -19,7 +19,7 @@ const blogPosts = [
     category: "Wissen",
     image:
       "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&h=450&fit=crop",
-    slug: "#",
+    slug: "/blog/rechnungen-richtig-schreiben",
   },
   {
     title: "Belege digitalisieren",
