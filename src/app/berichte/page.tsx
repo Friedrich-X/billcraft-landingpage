@@ -5,7 +5,7 @@ import { ProductHero } from "@/components/product-hero";
 import FeatureShowcaseSection from "@/components/FeatureShowcaseSection";
 import IntermediateSection from "@/components/IntermediateSection";
 import FAQ from "@/components/FAQ";
-import DashboardWidgetsVisual from "@/components/animations/DashboardWidgetsVisual";
+import Image from "next/image";
 import ChartAnimationVisual from "@/components/animations/ChartAnimationVisual";
 import SteuerExportVisual from "@/components/animations/SteuerExportVisual";
 
@@ -51,7 +51,21 @@ export default function BerichtePage() {
           ctaHref="#signup"
           headingId="berichte-hero-heading"
         >
-          <DashboardWidgetsVisual />
+          <div
+            className="w-[200%] max-w-none -mr-[50%] rounded-xl overflow-hidden border border-gray shadow-2xl"
+            style={{
+              transform: "perspective(1000px) rotateY(-12deg) rotateX(4deg)",
+            }}
+          >
+            <Image
+              src="/images/finanzen-details.webp"
+              alt="BillCraft Finanzdashboard"
+              width={1200}
+              height={800}
+              className="w-full h-auto"
+              priority
+            />
+          </div>
         </ProductHero>
 
         <FeatureShowcaseSection

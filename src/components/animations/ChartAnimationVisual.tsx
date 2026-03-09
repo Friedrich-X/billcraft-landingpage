@@ -3,88 +3,45 @@
 import React, { useState, useEffect, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { BarChart3 } from "lucide-react";
+import {
+  AreaChart,
+  Area,
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  ResponsiveContainer,
+} from "recharts";
 
-type Phase = "idle" | "bars" | "line" | "complete" | "pause";
-
-interface MonthData {
-  label: string;
-  value: number;
-  height: number; // percentage 0-100
-}
-
-const MONTHS: MonthData[] = [
-  { label: "Jan", value: 3200, height: 35 },
-  { label: "Feb", value: 4100, height: 45 },
-  { label: "M\u00E4r", value: 3800, height: 42 },
-  { label: "Apr", value: 5600, height: 62 },
-  { label: "Mai", value: 6900, height: 76 },
-  { label: "Jun", value: 8200, height: 90 },
+const DATA = [
+  { month: "Jan", umsatz: 3200, ausgaben: 1800 },
+  { month: "Feb", umsatz: 4100, ausgaben: 2100 },
+  { month: "Mär", umsatz: 3800, ausgaben: 1900 },
+  { month: "Apr", umsatz: 5600, ausgaben: 2400 },
+  { month: "Mai", umsatz: 6900, ausgaben: 2800 },
+  { month: "Jun", umsatz: 8200, ausgaben: 3100 },
 ];
 
 const SIGNATURE_EASE: [number, number, number, number] = [0.22, 1, 0.36, 1];
 
-const DELAY_IDLE = 800;
-const DELAY_BARS = 2200;
-const DELAY_LINE = 1200;
-const DELAY_PAUSE = 5000;
-
 const ChartAnimationVisual: React.FC = () => {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { amount: 0.3, once: false });
-  const [phase, setPhase] = useState<Phase>("idle");
+  const [show, setShow] = useState(false);
 
   useEffect(() => {
     if (!isInView) {
-      setPhase("idle");
+      setShow(false);
       return;
     }
+    const t = setTimeout(() => setShow(true), 600);
+    return () => clearTimeout(t);
+  }, [isInView]);
 
-    if (phase === "idle") {
-      const t = setTimeout(() => setPhase("bars"), DELAY_IDLE);
-      return () => clearTimeout(t);
-    }
-
-    if (phase === "bars") {
-      const t = setTimeout(() => setPhase("line"), DELAY_BARS);
-      return () => clearTimeout(t);
-    }
-
-    if (phase === "line") {
-      const t = setTimeout(() => setPhase("complete"), DELAY_LINE);
-      return () => clearTimeout(t);
-    }
-
-    if (phase === "complete") {
-      const t = setTimeout(() => setPhase("pause"), 200);
-      return () => clearTimeout(t);
-    }
-
-    if (phase === "pause") {
-      const t = setTimeout(() => setPhase("idle"), DELAY_PAUSE);
-      return () => clearTimeout(t);
-    }
-
-    return undefined;
-  }, [phase, isInView]);
-
-  const showBars =
-    phase === "bars" ||
-    phase === "line" ||
-    phase === "complete" ||
-    phase === "pause";
-  const showLine =
-    phase === "line" || phase === "complete" || phase === "pause";
-
-  // Calculate SVG line points for trend overlay
-  const chartWidth = 100; // percentage-based
-  const barSpacing = chartWidth / MONTHS.length;
-  const linePoints = MONTHS.map((m, i) => ({
-    x: barSpacing * i + barSpacing / 2,
-    y: 100 - m.height,
-  }));
-  const svgPath = linePoints
-    .map((p, i) => `${i === 0 ? "M" : "L"} ${p.x} ${p.y}`)
-    .join(" ");
+  const total = DATA.reduce((s, d) => s + d.umsatz, 0);
+  const totalAusgaben = DATA.reduce((s, d) => s + d.ausgaben, 0);
 
   return (
     <div
@@ -94,7 +51,7 @@ const ChartAnimationVisual: React.FC = () => {
       <div className="rounded-xl bg-white border border-gray shadow-lg overflow-hidden flex flex-col h-full">
         {/* Header */}
         <div className="px-4 py-2.5 border-b border-gray/50 bg-gray/30 flex items-center gap-2">
-          <BarChart3 className="w-4 h-4 text-purple-600" />
+          <BarChart3 className="w-4 h-4 text-blue" />
           <span className="text-base font-semibold text-foreground">
             Umsatzentwicklung
           </span>
@@ -103,145 +60,119 @@ const ChartAnimationVisual: React.FC = () => {
           </span>
         </div>
 
-        {/* Y-axis labels + Chart area */}
-        <div className="flex-1 px-4 pt-4 pb-2 flex gap-2">
-          {/* Y-axis */}
-          <div className="flex flex-col justify-between text-[10px] text-foreground/40 py-1 w-10 shrink-0">
-            <span>10.000</span>
-            <span>7.500</span>
-            <span>5.000</span>
-            <span>2.500</span>
-            <span>0</span>
-          </div>
-
-          {/* Chart */}
-          <div className="flex-1 relative">
-            {/* Grid lines */}
-            <div className="absolute inset-0 flex flex-col justify-between pointer-events-none">
-              {[0, 1, 2, 3, 4].map((i) => (
-                <div key={i} className="w-full h-px bg-gray/30" />
-              ))}
+        {/* KPI row */}
+        <motion.div
+          initial={{ opacity: 0, y: 8 }}
+          animate={show ? { opacity: 1, y: 0 } : { opacity: 0, y: 8 }}
+          transition={{ duration: 0.4, ease: SIGNATURE_EASE }}
+          className="px-4 pt-3 pb-2 flex gap-4"
+        >
+          <div>
+            <div className="text-[9px] text-foreground/40 uppercase tracking-wider">
+              Umsatz
             </div>
-
-            {/* Bars */}
-            <div className="absolute inset-0 flex items-end gap-1.5 px-1">
-              {MONTHS.map((month, i) => (
-                <div
-                  key={month.label}
-                  className="flex-1 flex flex-col items-center justify-end h-full"
-                >
-                  {/* Value label */}
-                  <motion.span
-                    initial={{ opacity: 0 }}
-                    animate={showBars ? { opacity: 1 } : { opacity: 0 }}
-                    transition={{
-                      duration: 0.3,
-                      delay: i * 0.12 + 0.3,
-                      ease: SIGNATURE_EASE,
-                    }}
-                    className="text-[9px] font-medium text-foreground/50 mb-1 tabular-nums"
-                  >
-                    {(month.value / 1000).toFixed(1)}k
-                  </motion.span>
-
-                  {/* Bar */}
-                  <motion.div
-                    initial={{ height: "0%" }}
-                    animate={
-                      showBars
-                        ? { height: `${month.height}%` }
-                        : { height: "0%" }
-                    }
-                    transition={{
-                      duration: 0.6,
-                      delay: i * 0.12,
-                      ease: SIGNATURE_EASE,
-                    }}
-                    className="w-full rounded-t-md bg-purple-400/80 relative overflow-hidden"
-                  >
-                    {/* Gradient shine */}
-                    <div className="absolute inset-0" />
-                  </motion.div>
-                </div>
-              ))}
+            <div className="text-sm font-bold text-foreground tabular-nums">
+              {(total / 1000).toFixed(1)}k €
             </div>
-
-            {/* Trend line overlay */}
-            {showLine && (
-              <svg
-                className="absolute inset-0 w-full h-full pointer-events-none"
-                viewBox="0 0 100 100"
-                preserveAspectRatio="none"
-              >
-                <motion.path
-                  d={svgPath}
-                  fill="none"
-                  stroke="#7c3aed"
-                  strokeWidth="2"
-                  vectorEffect="non-scaling-stroke"
-                  initial={{ pathLength: 0, opacity: 0 }}
-                  animate={{ pathLength: 1, opacity: 1 }}
-                  transition={{
-                    pathLength: { duration: 1, ease: SIGNATURE_EASE },
-                    opacity: { duration: 0.3 },
-                  }}
-                />
-                {linePoints.map((p, i) => (
-                  <motion.circle
-                    key={i}
-                    cx={p.x}
-                    cy={p.y}
-                    r="1.5"
-                    fill="white"
-                    stroke="#7c3aed"
-                    strokeWidth="1"
-                    vectorEffect="non-scaling-stroke"
-                    initial={{ opacity: 0, scale: 0 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{
-                      duration: 0.3,
-                      delay: i * 0.12 + 0.3,
-                      ease: SIGNATURE_EASE,
-                    }}
-                  />
-                ))}
-              </svg>
-            )}
           </div>
-        </div>
-
-        {/* X-axis labels */}
-        <div className="px-4 pb-2 flex gap-2">
-          <div className="w-10 shrink-0" />
-          <div className="flex-1 flex gap-1.5 px-1">
-            {MONTHS.map((month) => (
-              <div
-                key={month.label}
-                className="flex-1 text-center text-[11px] text-foreground/50 font-medium"
-              >
-                {month.label}
-              </div>
-            ))}
+          <div>
+            <div className="text-[9px] text-foreground/40 uppercase tracking-wider">
+              Ausgaben
+            </div>
+            <div className="text-sm font-bold text-foreground/70 tabular-nums">
+              {(totalAusgaben / 1000).toFixed(1)}k €
+            </div>
           </div>
-        </div>
+          <div>
+            <div className="text-[9px] text-foreground/40 uppercase tracking-wider">
+              Gewinn
+            </div>
+            <div className="text-sm font-bold text-green tabular-nums">
+              {((total - totalAusgaben) / 1000).toFixed(1)}k €
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Chart */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={show ? { opacity: 1 } : { opacity: 0 }}
+          transition={{ duration: 0.5, delay: 0.2, ease: SIGNATURE_EASE }}
+          className="flex-1 px-2 pb-1"
+        >
+          <ResponsiveContainer width="100%" height="100%">
+            <BarChart
+              data={DATA}
+              margin={{ top: 4, right: 4, left: -20, bottom: 0 }}
+              barGap={2}
+            >
+              <CartesianGrid
+                strokeDasharray="3 3"
+                stroke="var(--gray)"
+                vertical={false}
+              />
+              <XAxis
+                dataKey="month"
+                tick={{ fontSize: 10, fill: "var(--foreground)", opacity: 0.4 }}
+                axisLine={false}
+                tickLine={false}
+              />
+              <YAxis
+                tick={{ fontSize: 9, fill: "var(--foreground)", opacity: 0.35 }}
+                axisLine={false}
+                tickLine={false}
+                tickFormatter={(v: number) => `${v / 1000}k`}
+              />
+              <Tooltip
+                contentStyle={{
+                  fontSize: 11,
+                  borderRadius: 8,
+                  border: "1px solid var(--gray)",
+                  boxShadow: "0 4px 12px rgba(0,0,0,0.08)",
+                }}
+                formatter={(value) => [
+                  `${Number(value).toLocaleString("de-AT")} €`,
+                ]}
+              />
+              <Bar
+                dataKey="umsatz"
+                fill="var(--blue)"
+                radius={[4, 4, 0, 0]}
+                isAnimationActive={show}
+                animationDuration={800}
+                animationEasing="ease-out"
+              />
+              <Bar
+                dataKey="ausgaben"
+                fill="var(--pink)"
+                opacity={0.4}
+                radius={[4, 4, 0, 0]}
+                isAnimationActive={show}
+                animationDuration={800}
+                animationEasing="ease-out"
+                animationBegin={200}
+              />
+            </BarChart>
+          </ResponsiveContainer>
+        </motion.div>
 
         {/* Footer */}
         <div className="px-4 py-2 border-t border-gray/50 bg-gray/20 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <div className="flex items-center gap-1.5">
-              <span className="w-2.5 h-2.5 rounded-sm bg-purple-400/80" />
+              <span className="w-2.5 h-2.5 rounded-sm bg-blue" />
               <span className="text-[10px] text-foreground/50">Umsatz</span>
             </div>
             <div className="flex items-center gap-1.5">
-              <span className="w-4 h-0.5 rounded-full bg-purple-600" />
-              <span className="text-[10px] text-foreground/50">Trend</span>
+              <span className="w-2.5 h-2.5 rounded-sm bg-pink/40" />
+              <span className="text-[10px] text-foreground/50">Ausgaben</span>
             </div>
           </div>
           <motion.span
             initial={{ opacity: 0 }}
-            animate={showLine ? { opacity: 1 } : { opacity: 0 }}
-            transition={{ duration: 0.3 }}
-            className="text-[10px] font-semibold text-green-600"
+            animate={show ? { opacity: 1 } : { opacity: 0 }}
+            transition={{ duration: 0.3, delay: 0.8 }}
+            className="text-[10px] font-semibold text-green"
           >
             +156% Wachstum
           </motion.span>

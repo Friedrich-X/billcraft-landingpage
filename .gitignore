@@ -2,6 +2,8 @@
 
 # dependencies
 /docs/
+/.agents/
+/.continue/
 /.claude/
 /node_modules
 /.pnp

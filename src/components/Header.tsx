@@ -263,7 +263,7 @@ const Header: React.FC = () => {
           <ul className="hidden lg:flex items-center gap-8 absolute left-1/2 -translate-x-1/2 list-none p-0 m-0">
             {/* Produkt Megamenu */}
             <li
-              className="relative py-9"
+              className="relative py-7"
               onMouseEnter={handleMouseEnterMegaMenu}
               onMouseLeave={handleMouseLeaveMegaMenu}
             >
@@ -447,74 +447,88 @@ const Header: React.FC = () => {
       <AnimatePresence>
         {isSolutionsMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -10 }}
+            initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            transition={{ duration: 0.2, ease: "easeOut" }}
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
             className="absolute top-full left-0 right-0 w-full bg-white shadow-2xl border-t border-gray py-10 z-50"
             onMouseEnter={handleMouseEnterSolutionsMenu}
             onMouseLeave={handleMouseLeaveSolutionsMenu}
           >
             <div className="container mx-auto max-w-7xl px-4 md:px-6 lg:px-8">
               <div className="mb-8">
-                <h3 className="text-xs font-semibold text-blue uppercase mb-1">
+                <h3 className="text-xs font-semibold text-blue uppercase tracking-wide">
                   Lösungen für jedes Business
                 </h3>
               </div>
               <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
-                <div className="lg:col-span-3 grid grid-cols-1 md:grid-cols-3 gap-6">
+                {/* Main solution cards */}
+                <div className="lg:col-span-3 grid grid-cols-1 md:grid-cols-3 gap-5">
                   {solutionsItems.main.map((item, index) => (
                     <motion.div
                       key={item.label}
                       initial={{ opacity: 0, y: -10 }}
                       animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.2, delay: index * 0.05 }}
+                      transition={{
+                        duration: 0.3,
+                        delay: index * 0.06,
+                        ease: [0.22, 1, 0.36, 1],
+                      }}
                     >
                       <Link
                         href={item.href}
-                        className="group block bg-white hover:bg-gray rounded-lg overflow-hidden transition-all duration-200 cursor-pointer border border-gray hover:border-blue"
+                        className="group block rounded-xl overflow-hidden cursor-pointer transition-all duration-300 hover:shadow-lg"
                       >
-                        <div className="relative w-full h-40 overflow-hidden">
+                        <div className="relative w-full h-44 overflow-hidden rounded-xl">
                           <Image
                             src={item.image}
                             alt={item.label}
                             fill
-                            className="object-cover"
+                            className="object-cover transition-transform duration-500 ease-out group-hover:scale-105"
                           />
-                        </div>
-                        <div className="p-4">
-                          <h4 className="font-semibold text-foreground mb-2 group-hover:text-blue transition-colors text-base">
-                            {item.label}
-                          </h4>
-                          <p className="text-sm text-foreground/60 leading-relaxed">
-                            {item.description}
-                          </p>
+                          {/* Gradient overlay for text legibility */}
+                          <div className="absolute inset-0 bg-gradient-to-t from-graphite-black/80 via-graphite-black/20 to-transparent transition-opacity duration-300" />
+                          {/* Text on image */}
+                          <div className="absolute bottom-0 left-0 right-0 p-5">
+                            <h4 className="font-semibold text-white text-base mb-1 drop-shadow-sm">
+                              {item.label}
+                            </h4>
+                            <p className="text-sm text-white/80 leading-relaxed line-clamp-2">
+                              {item.description}
+                            </p>
+                          </div>
                         </div>
                       </Link>
                     </motion.div>
                   ))}
                 </div>
-                <div className="lg:col-span-1">
-                  {solutionsItems.side.map((category, categoryIndex) => (
+
+                {/* Side links */}
+                <div className="lg:col-span-1 lg:border-l lg:border-gray lg:pl-8">
+                  {solutionsItems.side.map((category) => (
                     <motion.div
                       key={category.category}
                       initial={{ opacity: 0, y: -10 }}
                       animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.2, delay: 0.15 }}
+                      transition={{
+                        duration: 0.3,
+                        delay: 0.18,
+                        ease: [0.22, 1, 0.36, 1],
+                      }}
                     >
-                      <div className="mb-4">
-                        <h3 className="text-xs font-semibold text-foreground/50 uppercase">
+                      <div className="mb-5">
+                        <h3 className="text-xs font-semibold text-foreground/40 uppercase tracking-wide">
                           {category.category}
                         </h3>
                       </div>
-                      <div className="space-y-3">
+                      <div className="space-y-4">
                         {category.items.map((item) => (
                           <Link
                             key={item.label}
                             href={item.href}
-                            className="flex items-center gap-2 text-blue hover:text-dark-blue font-medium text-base transition-colors group cursor-pointer"
+                            className="flex items-center gap-2.5 text-foreground/70 hover:text-blue font-medium text-sm transition-colors duration-200 group cursor-pointer"
                           >
-                            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                            <ArrowRight className="w-4 h-4 shrink-0 -translate-x-0.5 group-hover:translate-x-0 transition-transform duration-200" />
                             {item.label}
                           </Link>
                         ))}

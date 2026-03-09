@@ -14,10 +14,8 @@ export default function AGBPage() {
       <Header />
 
       <main className="pt-32 pb-20">
-        <div className="container mx-auto max-w-4xl px-4 md:px-6 lg:px-8">
-          <h1 className="text-3xl md:text-4xl font-semibold text-foreground mb-4">
-            Allgemeine Geschäftsbedingungen (AGB)
-          </h1>
+        <div className="prose-legal container mx-auto max-w-4xl px-4 md:px-6 lg:px-8">
+          <h1>Allgemeine Geschäftsbedingungen (AGB)</h1>
           <p className="text-foreground/50 mb-10">
             <strong className="text-foreground/70">
               BillCraft — Cloudbasierte Rechnungssoftware
@@ -32,7 +30,7 @@ export default function AGBPage() {
           <div className="space-y-8 text-foreground/70 leading-relaxed">
             {/* 1. Geltungsbereich */}
             <section>
-              <h2 className="text-xl font-semibold text-foreground mb-3">
+              <h2>
                 1. Geltungsbereich
               </h2>
               <p>
@@ -72,7 +70,7 @@ export default function AGBPage() {
 
             {/* 2. Vertragsgegenstand */}
             <section>
-              <h2 className="text-xl font-semibold text-foreground mb-3">
+              <h2>
                 2. Vertragsgegenstand
               </h2>
               <p>
@@ -116,7 +114,7 @@ export default function AGBPage() {
 
             {/* 3. Vertragsschluss */}
             <section>
-              <h2 className="text-xl font-semibold text-foreground mb-3">
+              <h2>
                 3. Vertragsschluss und Registrierung
               </h2>
               <p>
@@ -141,7 +139,7 @@ export default function AGBPage() {
 
             {/* 4. Free-Tarif */}
             <section>
-              <h2 className="text-xl font-semibold text-foreground mb-3">
+              <h2>
                 4. Kostenlose Nutzung (Free-Tarif)
               </h2>
               <p>
@@ -171,7 +169,7 @@ export default function AGBPage() {
 
             {/* 5. Kostenpflichtige Tarife */}
             <section>
-              <h2 className="text-xl font-semibold text-foreground mb-3">
+              <h2>
                 5. Kostenpflichtige Tarife und Preise
               </h2>
               <p>
@@ -195,7 +193,7 @@ export default function AGBPage() {
 
             {/* 6. Zahlung */}
             <section>
-              <h2 className="text-xl font-semibold text-foreground mb-3">
+              <h2>
                 6. Zahlung
               </h2>
               <p>
@@ -222,7 +220,7 @@ export default function AGBPage() {
 
             {/* 7. Vertragslaufzeit und Kündigung */}
             <section>
-              <h2 className="text-xl font-semibold text-foreground mb-3">
+              <h2>
                 7. Vertragslaufzeit und Kündigung
               </h2>
               <p>
@@ -293,7 +291,7 @@ export default function AGBPage() {
 
             {/* 8. Widerrufsrecht */}
             <section>
-              <h2 className="text-xl font-semibold text-foreground mb-3">
+              <h2>
                 8. Widerrufsrecht für Verbraucher
               </h2>
               <p>
@@ -331,7 +329,7 @@ export default function AGBPage() {
 
             {/* 9. Pflichten des Kunden */}
             <section>
-              <h2 className="text-xl font-semibold text-foreground mb-3">
+              <h2>
                 9. Pflichten des Kunden
               </h2>
               <p>
@@ -375,7 +373,7 @@ export default function AGBPage() {
 
             {/* 10. Nutzungsrechte */}
             <section>
-              <h2 className="text-xl font-semibold text-foreground mb-3">
+              <h2>
                 10. Nutzungsrechte
               </h2>
               <p>
@@ -397,7 +395,7 @@ export default function AGBPage() {
 
             {/* 11. Verfügbarkeit und Support */}
             <section>
-              <h2 className="text-xl font-semibold text-foreground mb-3">
+              <h2>
                 11. Verfügbarkeit und Support
               </h2>
               <p>
@@ -430,7 +428,7 @@ export default function AGBPage() {
 
             {/* 12. Gewährleistung */}
             <section>
-              <h2 className="text-xl font-semibold text-foreground mb-3">
+              <h2>
                 12. Gewährleistung
               </h2>
               <p>
@@ -451,7 +449,7 @@ export default function AGBPage() {
 
             {/* 13. Haftung */}
             <section>
-              <h2 className="text-xl font-semibold text-foreground mb-3">
+              <h2>
                 13. Haftung
               </h2>
               <p>
@@ -483,7 +481,7 @@ export default function AGBPage() {
 
             {/* 14. Datenschutz */}
             <section>
-              <h2 className="text-xl font-semibold text-foreground mb-3">
+              <h2>
                 14. Datenschutz
               </h2>
               <p>
@@ -515,7 +513,7 @@ export default function AGBPage() {
 
             {/* 15. Geheimhaltung */}
             <section>
-              <h2 className="text-xl font-semibold text-foreground mb-3">
+              <h2>
                 15. Geheimhaltung
               </h2>
               <p>
@@ -532,7 +530,7 @@ export default function AGBPage() {
 
             {/* 16. Daten nach Vertragsende */}
             <section>
-              <h2 className="text-xl font-semibold text-foreground mb-3">
+              <h2>
                 16. Daten nach Vertragsende
               </h2>
               <p>
@@ -549,7 +547,7 @@ export default function AGBPage() {
 
             {/* 17. Änderungen der AGB */}
             <section>
-              <h2 className="text-xl font-semibold text-foreground mb-3">
+              <h2>
                 17. Änderungen der AGB
               </h2>
               <p>
@@ -576,7 +574,7 @@ export default function AGBPage() {
 
             {/* 18. Anwendbares Recht */}
             <section>
-              <h2 className="text-xl font-semibold text-foreground mb-3">
+              <h2>
                 18. Anwendbares Recht und Gerichtsstand
               </h2>
               <p>
@@ -595,7 +593,7 @@ export default function AGBPage() {
 
             {/* 19. Salvatorische Klausel */}
             <section>
-              <h2 className="text-xl font-semibold text-foreground mb-3">
+              <h2>
                 19. Salvatorische Klausel
               </h2>
               <p>
@@ -609,7 +607,7 @@ export default function AGBPage() {
 
             {/* 20. Kontakt */}
             <section>
-              <h2 className="text-xl font-semibold text-foreground mb-3">
+              <h2>
                 20. Kontakt
               </h2>
               <p>Bei Fragen zu diesen AGB wenden Sie sich bitte an:</p>

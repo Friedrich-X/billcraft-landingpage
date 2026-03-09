@@ -70,7 +70,7 @@ const Footer: React.FC = () => {
               <Twitter className="w-5 h-5" aria-hidden />
             </Link>
             <Link
-              href="https://instagram.com"
+              href="https://instagram.com/billcraft.app"
               target="_blank"
               rel="noopener noreferrer"
               className="text-background/60 hover:text-blue transition-colors"

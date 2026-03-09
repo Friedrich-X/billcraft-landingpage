@@ -5,7 +5,7 @@ import { ProductHero } from "@/components/product-hero";
 import FeatureShowcaseSection from "@/components/FeatureShowcaseSection";
 import IntermediateSection from "@/components/IntermediateSection";
 import FAQ from "@/components/FAQ";
-import PaymentStatusVisual from "@/components/animations/PaymentStatusVisual";
+import PaymentStatusVisual from "@/components/animations/rechnungen/PaymentStatusVisual";
 import OffenePostenVisual from "@/components/animations/OffenePostenVisual";
 import MahnwesenVisual from "@/components/animations/MahnwesenVisual";
 

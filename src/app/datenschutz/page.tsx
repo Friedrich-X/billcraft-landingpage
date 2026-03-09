@@ -14,10 +14,8 @@ export default function DatenschutzPage() {
       <Header />
 
       <main className="pt-32 pb-20">
-        <div className="container mx-auto max-w-4xl px-4 md:px-6 lg:px-8">
-          <h1 className="text-3xl md:text-4xl font-semibold text-foreground mb-4">
-            Datenschutzerklärung
-          </h1>
+        <div className="prose-legal container mx-auto max-w-4xl px-4 md:px-6 lg:px-8">
+          <h1>Datenschutzerklärung</h1>
           <p className="text-foreground/50 mb-10">
             <strong className="text-foreground/70">
               BillCraft — Cloudbasierte Rechnungssoftware
@@ -32,7 +30,7 @@ export default function DatenschutzPage() {
           <div className="space-y-8 text-foreground/70 leading-relaxed">
             {/* 1. Verantwortlicher */}
             <section>
-              <h2 className="text-xl font-semibold text-foreground mb-3">
+              <h2>
                 1. Verantwortlicher
               </h2>
               <p>
@@ -75,7 +73,7 @@ export default function DatenschutzPage() {
 
             {/* 2. Datenschutzbeauftragter */}
             <section>
-              <h2 className="text-xl font-semibold text-foreground mb-3">
+              <h2>
                 2. Datenschutzbeauftragter
               </h2>
               <p>
@@ -93,7 +91,7 @@ export default function DatenschutzPage() {
 
             {/* 3. Überblick */}
             <section>
-              <h2 className="text-xl font-semibold text-foreground mb-3">
+              <h2>
                 3. Überblick über die Datenverarbeitung
               </h2>
               <p>
@@ -105,7 +103,7 @@ export default function DatenschutzPage() {
 
             {/* 4. Rechtsgrundlagen */}
             <section>
-              <h2 className="text-xl font-semibold text-foreground mb-3">
+              <h2>
                 4. Rechtsgrundlagen der Verarbeitung
               </h2>
               <ul className="list-disc pl-6 space-y-2">
@@ -140,11 +138,11 @@ export default function DatenschutzPage() {
 
             {/* 5. Welche Daten wir erheben */}
             <section>
-              <h2 className="text-xl font-semibold text-foreground mb-3">
+              <h2>
                 5. Welche Daten wir erheben
               </h2>
 
-              <h3 className="text-lg font-medium text-foreground mb-2 mt-4">
+              <h3 className="mt-4">
                 5.1 Registrierung und Kontodaten
               </h3>
               <p>Bei der Registrierung und Nutzung erheben wir:</p>
@@ -194,7 +192,7 @@ export default function DatenschutzPage() {
                 </table>
               </div>
 
-              <h3 className="text-lg font-medium text-foreground mb-2 mt-6">
+              <h3 className="mt-6">
                 5.2 Unternehmensdaten des Kunden
               </h3>
               <p>
@@ -209,7 +207,7 @@ export default function DatenschutzPage() {
                 <li>Logo</li>
               </ul>
 
-              <h3 className="text-lg font-medium text-foreground mb-2 mt-6">
+              <h3 className="mt-6">
                 5.3 Geschäftsdaten des Kunden
               </h3>
               <p>
@@ -238,7 +236,7 @@ export default function DatenschutzPage() {
                 .
               </p>
 
-              <h3 className="text-lg font-medium text-foreground mb-2 mt-6">
+              <h3 className="mt-6">
                 5.4 Zahlungsdaten
               </h3>
               <p>
@@ -248,7 +246,7 @@ export default function DatenschutzPage() {
                 Zahlungsstatus.
               </p>
 
-              <h3 className="text-lg font-medium text-foreground mb-2 mt-6">
+              <h3 className="mt-6">
                 5.5 Technische Daten (Server-Logs)
               </h3>
               <p>
@@ -273,7 +271,7 @@ export default function DatenschutzPage() {
                 Server-Logs werden nach 30 Tagen gelöscht.
               </p>
 
-              <h3 className="text-lg font-medium text-foreground mb-2 mt-6">
+              <h3 className="mt-6">
                 5.6 Gerätetokens (Push-Benachrichtigungen)
               </h3>
               <p>
@@ -287,11 +285,11 @@ export default function DatenschutzPage() {
 
             {/* 6. Drittanbieter */}
             <section>
-              <h2 className="text-xl font-semibold text-foreground mb-3">
+              <h2>
                 6. Einsatz von Drittanbietern (Auftragsverarbeiter)
               </h2>
 
-              <h3 className="text-lg font-medium text-foreground mb-2 mt-4">
+              <h3 className="mt-4">
                 6.1 Hosting und Infrastruktur
               </h3>
               <div className="mt-3 overflow-x-auto">
@@ -347,7 +345,7 @@ export default function DatenschutzPage() {
                 unter dem EU-US Data Privacy Framework zertifiziert.
               </p>
 
-              <h3 className="text-lg font-medium text-foreground mb-2 mt-6">
+              <h3 className="mt-6">
                 6.2 Zahlungsabwicklung
               </h3>
               <div className="mt-3 overflow-x-auto">
@@ -402,7 +400,7 @@ export default function DatenschutzPage() {
                 BillCraft speichert keine vollständigen Kreditkartennummern.
               </p>
 
-              <h3 className="text-lg font-medium text-foreground mb-2 mt-6">
+              <h3 className="mt-6">
                 6.3 E-Mail-Versand
               </h3>
               <div className="mt-3 overflow-x-auto">
@@ -448,7 +446,7 @@ export default function DatenschutzPage() {
                 Framework bzw. Standardvertragsklauseln (SCCs).
               </p>
 
-              <h3 className="text-lg font-medium text-foreground mb-2 mt-6">
+              <h3 className="mt-6">
                 6.4 Authentifizierung
               </h3>
               <div className="mt-3 overflow-x-auto">
@@ -494,7 +492,7 @@ export default function DatenschutzPage() {
                 Google OAuth ist freiwillig.
               </p>
 
-              <h3 className="text-lg font-medium text-foreground mb-2 mt-6">
+              <h3 className="mt-6">
                 6.5 KI-Funktionen
               </h3>
               <div className="mt-3 overflow-x-auto">
@@ -542,7 +540,7 @@ export default function DatenschutzPage() {
                 verfügbar und freiwillig.
               </p>
 
-              <h3 className="text-lg font-medium text-foreground mb-2 mt-6">
+              <h3 className="mt-6">
                 6.6 Push-Benachrichtigungen
               </h3>
               <div className="mt-3 overflow-x-auto">
@@ -583,11 +581,11 @@ export default function DatenschutzPage() {
 
             {/* 7. Cookies */}
             <section>
-              <h2 className="text-xl font-semibold text-foreground mb-3">
+              <h2>
                 7. Cookies und lokale Speicherung
               </h2>
 
-              <h3 className="text-lg font-medium text-foreground mb-2 mt-4">
+              <h3 className="mt-4">
                 7.1 Technisch notwendige Cookies
               </h3>
               <p>
@@ -609,7 +607,7 @@ export default function DatenschutzPage() {
                 notwendig).
               </p>
 
-              <h3 className="text-lg font-medium text-foreground mb-2 mt-6">
+              <h3 className="mt-6">
                 7.2 Analyse- und Marketing-Cookies
               </h3>
               <p>
@@ -622,7 +620,7 @@ export default function DatenschutzPage() {
 
             {/* 8. Datentransfer */}
             <section>
-              <h2 className="text-xl font-semibold text-foreground mb-3">
+              <h2>
                 8. Datentransfer in Drittländer
               </h2>
               <p>
@@ -651,7 +649,7 @@ export default function DatenschutzPage() {
 
             {/* 9. Speicherdauer */}
             <section>
-              <h2 className="text-xl font-semibold text-foreground mb-3">
+              <h2>
                 9. Speicherdauer
               </h2>
               <div className="mt-3 overflow-x-auto">
@@ -710,7 +708,7 @@ export default function DatenschutzPage() {
 
             {/* 10. Rechte */}
             <section>
-              <h2 className="text-xl font-semibold text-foreground mb-3">
+              <h2>
                 10. Ihre Rechte als betroffene Person
               </h2>
               <p>Sie haben gemäß DSGVO folgende Rechte:</p>
@@ -776,7 +774,7 @@ export default function DatenschutzPage() {
 
             {/* 11. Beschwerderecht */}
             <section>
-              <h2 className="text-xl font-semibold text-foreground mb-3">
+              <h2>
                 11. Beschwerderecht bei der Aufsichtsbehörde
               </h2>
               <p>
@@ -816,7 +814,7 @@ export default function DatenschutzPage() {
 
             {/* 12. Datensicherheit */}
             <section>
-              <h2 className="text-xl font-semibold text-foreground mb-3">
+              <h2>
                 12. Datensicherheit
               </h2>
               <p>
@@ -826,6 +824,7 @@ export default function DatenschutzPage() {
               <ul className="list-disc pl-6 mt-2 space-y-1">
                 <li>Verschlüsselung der Datenübertragung mittels TLS/SSL</li>
                 <li>Verschlüsselung von Passwörtern mittels bcrypt</li>
+                <li>Verschlüsselte Speicherung von Bankdaten (IBAN, BIC)</li>
                 <li>
                   Zwei-Faktor-Authentifizierung (2FA) als optionale
                   Sicherheitsmaßnahme
@@ -838,7 +837,7 @@ export default function DatenschutzPage() {
 
             {/* 13. Automatisierte Entscheidungsfindung */}
             <section>
-              <h2 className="text-xl font-semibold text-foreground mb-3">
+              <h2>
                 13. Automatisierte Entscheidungsfindung
               </h2>
               <p>
@@ -851,7 +850,7 @@ export default function DatenschutzPage() {
 
             {/* 14. Änderungen */}
             <section>
-              <h2 className="text-xl font-semibold text-foreground mb-3">
+              <h2>
                 14. Änderungen dieser Datenschutzerklärung
               </h2>
               <p>
@@ -869,7 +868,7 @@ export default function DatenschutzPage() {
 
             {/* 15. Kontakt */}
             <section>
-              <h2 className="text-xl font-semibold text-foreground mb-3">
+              <h2>
                 15. Kontakt
               </h2>
               <p>Bei Fragen zum Datenschutz:</p>

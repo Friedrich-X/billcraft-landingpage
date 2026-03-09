@@ -79,9 +79,9 @@ const ProductHero: React.FC<ProductHeroProps> = ({
 
           {/* Rechts: Bild oder children (Beispiel/Karte) */}
           <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4, ease: "easeOut", delay: 0.1 }}
+            initial={{ opacity: 0, x: 80 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.15 }}
             className="flex justify-center lg:justify-end"
           >
             {hasCustomContent ? (

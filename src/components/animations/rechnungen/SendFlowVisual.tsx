@@ -86,9 +86,9 @@ const SendFlowVisual: React.FC = () => {
   return (
     <div
       ref={ref}
-      className="relative rounded-2xl p-4 md:p-6 lg:p-8 w-full max-w-md h-[340px] md:h-[380px] flex flex-col justify-center mx-auto"
+      className="relative rounded-2xl p-4 md:p-6 lg:p-8 w-full max-w-md h-[400px] md:h-[440px] flex flex-col justify-center mx-auto"
     >
-      <div className="relative w-full h-[320px] md:h-[360px] mx-auto">
+      <div className="relative w-full h-[380px] md:h-[420px] mx-auto">
         <div
           className="rounded-xl bg-white border border-gray shadow-lg overflow-hidden flex flex-col h-full"
           aria-hidden
@@ -185,21 +185,19 @@ const SendFlowVisual: React.FC = () => {
                         </span>
 
                         {/* Connector line */}
-                        {i < STEPS.length - 1 && (
-                          <div className="flex-1 h-px bg-gray/50 relative overflow-hidden">
-                            <motion.div
-                              className="absolute inset-y-0 left-0 bg-blue/40"
-                              initial={{ width: "0%" }}
-                              animate={{
-                                width: isActive ? "100%" : "0%",
-                              }}
-                              transition={{
-                                duration: 0.5,
-                                ease: SIGNATURE_EASE,
-                              }}
-                            />
-                          </div>
-                        )}
+                        <div className="flex-1 h-px bg-gray/50 relative overflow-hidden">
+                          <motion.div
+                            className="absolute inset-y-0 left-0 bg-blue/40"
+                            initial={{ width: "0%" }}
+                            animate={{
+                              width: isActive ? "100%" : "0%",
+                            }}
+                            transition={{
+                              duration: 0.5,
+                              ease: SIGNATURE_EASE,
+                            }}
+                          />
+                        </div>
 
                         {/* Timestamp */}
                         <AnimatePresence>

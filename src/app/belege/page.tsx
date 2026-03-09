@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 import { ProductHero } from "@/components/product-hero";
 import FeatureShowcaseSection from "@/components/FeatureShowcaseSection";
 import IntermediateSection from "@/components/IntermediateSection";
-import BelegScannerVisual from "@/components/animations/BelegScannerVisual";
+import Image from "next/image";
 import BelegKategorisierungVisual from "@/components/animations/BelegKategorisierungVisual";
 import BelegArchivVisual from "@/components/animations/BelegArchivVisual";
 import FAQ from "@/components/FAQ";
@@ -51,7 +51,21 @@ export default function BelegePage() {
           ctaHref="#signup"
           headingId="belege-hero-heading"
         >
-          <BelegScannerVisual />
+          <div
+            className="w-[200%] max-w-none -mr-[50%] rounded-xl overflow-hidden border border-gray shadow-2xl"
+            style={{
+              transform: "perspective(1000px) rotateY(-12deg) rotateX(4deg)",
+            }}
+          >
+            <Image
+              src="/images/beleg-details.webp"
+              alt="BillCraft Belegdetail-Ansicht"
+              width={1200}
+              height={800}
+              className="w-full h-auto"
+              priority
+            />
+          </div>
         </ProductHero>
 
         <FeatureShowcaseSection

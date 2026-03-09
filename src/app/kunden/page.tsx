@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 import { ProductHero } from "@/components/product-hero";
 import FeatureShowcaseSection from "@/components/FeatureShowcaseSection";
 import IntermediateSection from "@/components/IntermediateSection";
-import KundenProfilVisual from "@/components/animations/KundenProfilVisual";
+import Image from "next/image";
 import KundenListeVisual from "@/components/animations/KundenListeVisual";
 import KundenUmsatzVisual from "@/components/animations/KundenUmsatzVisual";
 import FAQ from "@/components/FAQ";
@@ -50,7 +50,21 @@ export default function KundenPage() {
           ctaHref="#signup"
           headingId="kunden-hero-heading"
         >
-          <KundenProfilVisual />
+          <div
+            className="w-[200%] max-w-none -mr-[50%] rounded-xl overflow-hidden border border-gray shadow-2xl"
+            style={{
+              transform: "perspective(1000px) rotateY(-12deg) rotateX(4deg)",
+            }}
+          >
+            <Image
+              src="/images/kunden-details.webp"
+              alt="BillCraft Kundendetail-Ansicht"
+              width={1200}
+              height={800}
+              className="w-full h-auto"
+              priority
+            />
+          </div>
         </ProductHero>
 
         <FeatureShowcaseSection
