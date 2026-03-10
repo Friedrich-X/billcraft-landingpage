@@ -8,9 +8,9 @@ const footerColumns = [
     title: "Produkt",
     links: [
       { label: "Rechnungen", href: "/rechnungen" },
+      { label: "Angebote", href: "/angebote" },
       { label: "Kundenverwaltung", href: "/kunden" },
       { label: "Belege", href: "/belege" },
-      { label: "Zahlungen", href: "/zahlungen" },
       { label: "Berichte", href: "/berichte" },
       { label: "KI-Funktionen", href: "/ki" },
       { label: "Preise", href: "/preise" },

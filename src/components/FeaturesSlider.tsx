@@ -70,8 +70,8 @@ const FeaturesSlider: React.FC = () => {
     },
     {
       icon: CreditCard,
-      title: "Zahlungsübersicht",
-      description: "Behalte offene Zahlungen im Blick",
+      title: "Offene Posten",
+      description: "Behalte offene Rechnungen im Blick",
       color: "text-pink-500",
       bgColor: "bg-pink-500/10",
       hoverBgColor: "group-hover:bg-pink-500/20",

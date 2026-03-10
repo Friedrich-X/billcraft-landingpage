@@ -9,6 +9,7 @@ export interface PlanConfig {
   ctaText: string;
   ctaHref: string;
   ctaVariant: "primary" | "outline";
+  disabled?: boolean;
 }
 
 export type ComparisonCellValue = string | "check" | "dash";
@@ -50,7 +51,7 @@ const PlanComparisonTable: React.FC<PlanComparisonTableProps> = ({
             <tr className="plan-comparison-header-row bg-background sticky top-20 z-10">
               <th
                 scope="col"
-                className="plan-comparison-header-cell relative py-4 px-0 pr-4 font-semibold text-lg text-foreground w-[50%] min-w-0 align-bottom"
+                className="plan-comparison-header-cell relative py-4 px-0 pr-4 font-semibold text-lg text-foreground w-[40%] min-w-0 align-bottom"
               >
                 Plan
               </th>
@@ -58,18 +59,24 @@ const PlanComparisonTable: React.FC<PlanComparisonTableProps> = ({
                 <th
                   key={plan.name}
                   scope="col"
-                  className="py-4 px-4 font-semibold text-foreground text-center align-bottom w-[25%]"
+                  className="py-4 px-4 font-semibold text-foreground text-center align-bottom w-[20%]"
                 >
                   <div className="flex flex-col items-center justify-end gap-3 min-h-[72px]">
-                    <span>{plan.name}</span>
-                    <Button
-                      href={plan.ctaHref}
-                      variant={plan.ctaVariant}
-                      size="md"
-                      className="min-w-[140px]"
-                    >
-                      {plan.ctaText}
-                    </Button>
+                    <span className={plan.disabled ? "text-foreground/40" : ""}>{plan.name}</span>
+                    {plan.disabled ? (
+                      <span className="inline-flex items-center justify-center min-w-[140px] px-4 py-2 rounded-lg text-sm font-medium bg-foreground/5 text-foreground/35 cursor-not-allowed">
+                        {plan.ctaText}
+                      </span>
+                    ) : (
+                      <Button
+                        href={plan.ctaHref}
+                        variant={plan.ctaVariant}
+                        size="md"
+                        className="min-w-[140px]"
+                      >
+                        {plan.ctaText}
+                      </Button>
+                    )}
                   </div>
                 </th>
               ))}
@@ -119,7 +126,11 @@ const PlanComparisonTable: React.FC<PlanComparisonTableProps> = ({
                           aria-hidden
                         />
                       ) : value === "dash" ? (
-                        <span className="text-foreground/70">—</span>
+                        <span className="text-foreground/30">&mdash;</span>
+                      ) : value === "soon" ? (
+                        <span className="inline-block text-[11px] font-semibold text-orange bg-orange/10 px-2 py-0.5 rounded-full">
+                          Demn&auml;chst
+                        </span>
                       ) : (
                         <span
                           className={

@@ -78,15 +78,16 @@ const FeatureGrid: React.FC<FeatureGridProps> = ({
               <div
                 className={`w-12 h-12 rounded-2xl flex items-center justify-center mb-4 ${
                   feature.iconBg || "bg-blue/10"
-                }`}
+                } ${feature.iconColor || "text-blue"}`}
               >
-                <div className={`w-6 h-6 ${feature.iconColor || "text-blue"}`}>
-                  {feature.icon}
-                </div>
+                {feature.icon}
               </div>
-              <h3 className="text-lg font-semibold text-foreground mb-2">
+              <p
+                className="font-semibold text-foreground"
+                style={{ fontSize: "1.25rem", lineHeight: 1.35, marginBottom: "0.5rem" }}
+              >
                 {feature.title}
-              </h3>
+              </p>
               <p className="text-[15px] text-foreground/55 leading-relaxed">
                 {feature.description}
               </p>

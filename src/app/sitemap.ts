@@ -8,9 +8,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/preise", priority: 0.9, changeFrequency: "monthly" as const },
     // Produkt
     { path: "/rechnungen", priority: 0.8, changeFrequency: "monthly" as const },
+    { path: "/angebote", priority: 0.8, changeFrequency: "monthly" as const },
     { path: "/kunden", priority: 0.8, changeFrequency: "monthly" as const },
     { path: "/belege", priority: 0.8, changeFrequency: "monthly" as const },
-    { path: "/zahlungen", priority: 0.8, changeFrequency: "monthly" as const },
     { path: "/berichte", priority: 0.8, changeFrequency: "monthly" as const },
     { path: "/ki", priority: 0.8, changeFrequency: "monthly" as const },
     // Lösungen

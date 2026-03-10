@@ -19,22 +19,22 @@ const faqItems = [
   {
     question: "Welche Belegtypen werden unterstützt?",
     answer:
-      "BillCraft unterstützt alle gängigen Belegtypen: Quittungen, Rechnungen, Kassenzettel sowie digitale Belege wie PDFs und E-Mail-Anhänge. Einfach fotografieren oder hochladen – den Rest erledigt die automatische Erkennung.",
+      "BillCraft unterstützt alle gängigen Belegtypen: Quittungen, Eingangsrechnungen, Kassenzettel sowie digitale Belege wie PDFs und E-Mail-Anhänge. Einfach fotografieren oder hochladen – den Rest erledigt die automatische Erkennung.",
   },
   {
     question: "Wie funktioniert die automatische Erkennung?",
     answer:
-      "Unsere KI erkennt automatisch die wichtigsten Daten aus Ihren Belegen: Datum, Betrag, Händler und Kategorie. Egal ob Foto oder PDF – die Erkennung funktioniert zuverlässig und spart Ihnen das manuelle Eintippen.",
+      "Unsere KI erkennt automatisch die wichtigsten Daten aus deinen Belegen: Datum, Betrag, Händler und Kategorie. Egal ob Foto oder PDF – die Erkennung funktioniert zuverlässig und spart dir das manuelle Eintippen.",
   },
   {
-    question: "Sind meine Belege GoBD-konform archiviert?",
+    question: "Sind meine Belege BAO-konform archiviert?",
     answer:
-      "Ja. Alle Belege werden revisionssicher archiviert: unveränderbar, vollständig und jederzeit abrufbar. Die Aufbewahrungsfrist von 10 Jahren wird automatisch eingehalten – so sind Sie immer auf der sicheren Seite.",
+      "Ja. Alle Belege werden gemäß der österreichischen Bundesabgabenordnung (BAO) revisionssicher archiviert: unveränderbar, vollständig und jederzeit abrufbar. Die Aufbewahrungsfrist von 7 Jahren wird automatisch eingehalten.",
   },
   {
     question: "Kann ich Belege exportieren?",
     answer:
-      "Ja, Sie können Belege jederzeit als PDF oder CSV exportieren – einzeln oder gesammelt. Die Exporte sind Steuerberater-ready und lassen sich direkt in gängige Buchhaltungssysteme importieren.",
+      "Ja, du kannst Belege jederzeit als PDF oder CSV exportieren – einzeln oder gesammelt. Die Exporte sind steuerberater-ready und lassen sich direkt in gängige Buchhaltungssysteme importieren.",
   },
 ];
 

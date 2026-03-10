@@ -6,9 +6,9 @@ import Image from "next/image";
 import Button from "./Button";
 import {
   FileText,
+  ClipboardList,
   Users,
   Receipt,
-  CreditCard,
   BarChart3,
   ChevronDown,
   Info,
@@ -124,6 +124,12 @@ const Header: React.FC = () => {
       href: "/rechnungen",
     },
     {
+      icon: ClipboardList,
+      label: "Angebote",
+      description: "Erstelle Angebote und konvertiere sie zur Rechnung",
+      href: "/angebote",
+    },
+    {
       icon: Users,
       label: "Kundenverwaltung",
       description: "Verwalte deine Kunden zentral und übersichtlich",
@@ -134,12 +140,6 @@ const Header: React.FC = () => {
       label: "Belege",
       description: "Digitalisiere und organisiere alle Belege",
       href: "/belege",
-    },
-    {
-      icon: CreditCard,
-      label: "Zahlungen",
-      description: "Behalte alle Zahlungen im Überblick",
-      href: "/zahlungen",
     },
     {
       icon: BarChart3,

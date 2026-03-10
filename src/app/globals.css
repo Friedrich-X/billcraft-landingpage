@@ -71,7 +71,6 @@ main h5,
 main h6 {
   font-weight: 600;
   line-height: 1.15;
-  color: var(--foreground);
   text-wrap: balance;
 }
 

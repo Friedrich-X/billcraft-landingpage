@@ -41,9 +41,9 @@ const useCases = [
     icon: CreditCard,
     iconColor: "text-[#FFA85B]",
     iconBg: "bg-[#FFA85B]/10",
-    title: "Zahlungen",
+    title: "Offene Posten",
     description:
-      "Behalte den Überblick über ein- und ausgehende Zahlungen. Automatischer Abgleich spart dir Zeit.",
+      "Sieh auf einen Blick, welche Rechnungen offen oder überfällig sind. Mahnstufen und Erinnerungen inklusive.",
   },
   {
     icon: BarChart3,

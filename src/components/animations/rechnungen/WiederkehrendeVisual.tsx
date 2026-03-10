@@ -79,78 +79,78 @@ export default function WiederkehrendeVisual() {
           <span className="text-[10px] text-foreground/40">Wartungsvertrag Premium</span>
         </motion.div>
 
-        {/* Timeline */}
-        <div className="relative">
+        {/* Timeline — fixed height container to prevent layout shift */}
+        <div className="relative h-[250px]">
           {/* Vertical line */}
           <div className="absolute left-[18px] top-2 bottom-2 w-px bg-gray" />
 
-          <div className="space-y-2.5">
+          <div className="absolute inset-0 flex flex-col gap-2.5">
             {INVOICES.map((inv, i) => (
-              <AnimatePresence key={i}>
-                {i < visibleCount && (
+              <div key={i} className="h-[44px] relative">
+                <motion.div
+                  initial={{ opacity: 0, x: -12 }}
+                  animate={{
+                    opacity: i < visibleCount ? 1 : 0,
+                    x: i < visibleCount ? 0 : -12,
+                  }}
+                  transition={{ duration: 0.45, ease: EASE }}
+                  className="absolute inset-0 flex items-center gap-3"
+                >
+                  {/* Timeline dot */}
                   <motion.div
-                    initial={{ opacity: 0, x: -12 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: -8 }}
-                    transition={{ duration: 0.45, ease: EASE }}
-                    className="relative flex items-center gap-3"
-                  >
-                    {/* Timeline dot */}
-                    <motion.div
-                      className="relative z-10 w-[9px] h-[9px] rounded-full shrink-0"
-                      style={{ marginLeft: "14px" }}
-                      initial={{ scale: 0 }}
-                      animate={{
-                        scale: 1,
-                        backgroundColor:
-                          i === visibleCount - 1 && phase === "generating"
-                            ? "var(--purple)"
-                            : "var(--blue)",
-                      }}
-                      transition={{ type: "spring", stiffness: 400, damping: 15 }}
-                    />
+                    className="relative z-10 w-[9px] h-[9px] rounded-full shrink-0"
+                    style={{ marginLeft: "14px" }}
+                    animate={{
+                      scale: i < visibleCount ? 1 : 0,
+                      backgroundColor:
+                        i === visibleCount - 1 && phase === "generating"
+                          ? "var(--purple)"
+                          : "var(--blue)",
+                    }}
+                    transition={{ type: "spring", stiffness: 400, damping: 15 }}
+                  />
 
-                    {/* Invoice card */}
-                    <div className="flex-1 flex items-center justify-between rounded-lg bg-white border border-gray shadow-sm px-3 py-2.5">
-                      <div className="flex items-center gap-2.5">
-                        <span className="text-[10px] font-bold text-foreground/40 w-6">
-                          {inv.month}
-                        </span>
-                        <div>
-                          <div className="text-[11px] font-medium text-foreground">
-                            {inv.nr}
-                          </div>
-                          <div className="text-[9px] text-foreground/40">
-                            Auto-generiert
-                          </div>
+                  {/* Invoice card */}
+                  <div className="flex-1 flex items-center justify-between rounded-lg bg-white border border-gray shadow-sm px-3 py-2.5">
+                    <div className="flex items-center gap-2.5">
+                      <span className="text-[10px] font-bold text-foreground/40 w-6">
+                        {inv.month}
+                      </span>
+                      <div>
+                        <div className="text-[11px] font-medium text-foreground">
+                          {inv.nr}
                         </div>
-                      </div>
-                      <div className="text-right">
-                        <div className="text-[11px] font-semibold text-foreground">
-                          {inv.amount} &euro;
+                        <div className="text-[9px] text-foreground/40">
+                          Auto-generiert
                         </div>
-                        <motion.div
-                          initial={{ opacity: 0 }}
-                          animate={{ opacity: 1 }}
-                          transition={{ delay: 0.3 }}
-                          className="text-[9px] font-medium text-green"
-                        >
-                          Versendet
-                        </motion.div>
                       </div>
                     </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
+                    <div className="text-right">
+                      <div className="text-[11px] font-semibold text-foreground">
+                        {inv.amount} &euro;
+                      </div>
+                      <motion.div
+                        animate={{ opacity: i < visibleCount ? 1 : 0 }}
+                        transition={{ delay: 0.3 }}
+                        className="text-[9px] font-medium text-green"
+                      >
+                        Versendet
+                      </motion.div>
+                    </div>
+                  </div>
+                </motion.div>
+              </div>
             ))}
 
-            {/* Next upcoming invoice (dimmed) */}
-            {phase === "complete" || phase === "pause" ? (
+            {/* Next upcoming invoice (dimmed) — always takes space */}
+            <div className="h-[44px] relative">
               <motion.div
-                initial={{ opacity: 0, x: -12 }}
-                animate={{ opacity: 0.45, x: 0 }}
+                animate={{
+                  opacity: phase === "complete" || phase === "pause" ? 0.45 : 0,
+                  x: phase === "complete" || phase === "pause" ? 0 : -12,
+                }}
                 transition={{ duration: 0.45, ease: EASE, delay: 0.3 }}
-                className="relative flex items-center gap-3"
+                className="absolute inset-0 flex items-center gap-3"
               >
                 <div
                   className="relative z-10 w-[9px] h-[9px] rounded-full bg-foreground/20 shrink-0"
@@ -167,7 +167,7 @@ export default function WiederkehrendeVisual() {
                   <div className="text-[11px] font-semibold text-foreground/40">1.200,00 &euro;</div>
                 </div>
               </motion.div>
-            ) : null}
+            </div>
           </div>
         </div>
       </div>
