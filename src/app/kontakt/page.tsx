@@ -46,21 +46,14 @@ const contactSections = [
     content: (
       <>
         Um BillCraft zum Thema Partnerschaften oder Presseanfragen zu
-        kontaktieren:
-        <br />
+        kontaktieren, schreib uns an{" "}
         <a
-          href="mailto:partner@billcraft.at"
+          href="mailto:hallo@billcraft.app"
           className="underline hover:text-blue transition-colors"
         >
-          partner@billcraft.at
+          hallo@billcraft.app
         </a>
-        {" · "}
-        <a
-          href="mailto:presse@billcraft.at"
-          className="underline hover:text-blue transition-colors"
-        >
-          presse@billcraft.at
-        </a>
+        .
       </>
     ),
   },
@@ -74,10 +67,10 @@ const contactSections = [
         Für alle sonstigen Fragen, Feedback oder wenn du einfach mit uns in
         Kontakt treten möchtest, erreichst du uns jederzeit per E-Mail unter{" "}
         <a
-          href="mailto:hello@billcraft.at"
+          href="mailto:hallo@billcraft.app"
           className="underline hover:text-blue transition-colors"
         >
-          hello@billcraft.at
+          hallo@billcraft.app
         </a>
         . Wir antworten in der Regel innerhalb von 24 Stunden.
       </>
@@ -93,10 +86,10 @@ const contactSections = [
         Du möchtest neue Funktionen vorschlagen oder hast Ideen, wie wir
         BillCraft verbessern können? Schreib uns an{" "}
         <a
-          href="mailto:feedback@billcraft.at"
+          href="mailto:hallo@billcraft.app"
           className="underline hover:text-blue transition-colors"
         >
-          feedback@billcraft.at
+          hallo@billcraft.app
         </a>
         . Wir prüfen alle Einsendungen sorgfältig und lassen sie direkt in die
         Produktentwicklung einfließen.
@@ -113,10 +106,10 @@ const contactSections = [
         Wenn du eine sicherheitsrelevante Schwachstelle in BillCraft gefunden
         hast oder Fragen zum Datenschutz hast, kontaktiere uns bitte unter{" "}
         <a
-          href="mailto:security@billcraft.at"
+          href="mailto:hallo@billcraft.app"
           className="underline hover:text-blue transition-colors"
         >
-          security@billcraft.at
+          hallo@billcraft.app
         </a>
         . Weitere Informationen findest du in unserer{" "}
         <Link
@@ -189,10 +182,10 @@ export default function KontaktPage() {
             <p>Wien, Österreich</p>
             <p>
               <a
-                href="mailto:hello@billcraft.at"
+                href="mailto:hallo@billcraft.app"
                 className="hover:text-blue transition-colors"
               >
-                hello@billcraft.at
+                hallo@billcraft.app
               </a>
             </p>
           </div>
