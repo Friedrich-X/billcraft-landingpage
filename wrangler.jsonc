@@ -1,11 +1,14 @@
 {
-	    "$schema": "node_modules/wrangler/config-schema.json",
-	    "name": "billcraft-landingpage",
-	    "compatibility_date": "2025-09-27",
-	    "observability": {
-	      "enabled": true
-	    },
-	    "compatibility_flags": [
-	      "nodejs_compat"
-	    ]
+	"$schema": "./node_modules/wrangler/config-schema.json",
+	"main": ".open-next/worker.js",
+	"name": "billcraft-landingpage",
+	// Set this to today's date
+	"compatibility_date": "2026-03-09",
+	"compatibility_flags": [
+	  "nodejs_compat"
+	],
+	"assets": {
+	  "directory": ".open-next/assets",
+	  "binding": "ASSETS"
+	}
   }
